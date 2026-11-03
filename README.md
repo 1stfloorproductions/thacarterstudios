@@ -33,12 +33,14 @@ Drop a new pair into `assets/photos/` named `whatever-800.jpg` and `whatever-160
 then point the `src`/`srcset` of the figure at them. Keep both sizes — the grid loads the
 800 and the lightbox loads the 1600.
 
-### Changing the rates
-In `index.html`, the three room buttons carry `data-rate` (dollars per hour) and the three
-add-ons carry `data-add` (flat dollars). The 10% long-session discount is in the `render()`
-function. **The numbers currently in there are placeholders carried over from the demo
-build — they are not Sean's real rates.** The page says "estimate only" because of that.
-Once the real numbers are in, that note can be softened.
+### Changing the rate
+One flat rate, $45 an hour, any room. Confirmed by Sean 2026-11-02. It lives in `index.html` in
+two places that must stay in step: the `RATE` constant in the script, and the `$45` printed in the
+`.rate-big` block and the `#subline` fallback text.
+
+Everything else — engineer, mixing, mastering, video, photo days — is quoted per session and
+deliberately carries no number on the page. Do not invent one. The earlier build had made-up room
+rates and add-on prices; they were removed on 2026-11-02 because the site is live to real clients.
 
 ### Changing the contact details
 Sean's phone and email appear in: the nav button, the contact plate, the booking mailto,

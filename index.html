@@ -205,11 +205,15 @@ input[type=range]{width:100%;accent-color:var(--brass)}
 .lines b{color:var(--bone);font-weight:600;font-variant-numeric:tabular-nums}
 .total .btn{width:100%;text-align:center}
 .total .fine{color:#6E6759;font-size:12.5px;margin:14px 0 0;line-height:1.5}
-.estnote{display:flex;gap:10px;align-items:flex-start;margin:0 0 clamp(22px,3vw,30px);
-  padding:14px 16px;border:1px solid var(--line);border-radius:10px;
-  background:rgba(227,177,74,.06);color:#CFC6B4;font-size:14px;line-height:1.55}
-.estnote b{color:var(--brass);font-family:var(--caps);font-size:11.5px;letter-spacing:.18em;
-  text-transform:uppercase;display:block;margin-bottom:3px}
+.rate-big{font-family:var(--caps);font-size:clamp(44px,9vw,62px);color:var(--brass);
+  line-height:1;margin:0 0 10px;font-variant-numeric:tabular-nums;display:flex;
+  align-items:baseline;gap:12px;flex-wrap:wrap}
+.rate-big span{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.rate-note{margin:0;color:var(--mute);font-size:14px;line-height:1.55}
+.quoted{list-style:none;padding:0;margin:0 0 13px}
+.quoted li{position:relative;padding-left:17px;color:var(--bone);font-size:15px;margin-bottom:6px}
+.quoted li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;
+  border-radius:50%;background:var(--brass-dk)}
 
 /* ---------- booking ---------- */
 .book{display:grid;gap:clamp(20px,3vw,32px)}
@@ -609,48 +613,41 @@ footer{border-top:1px solid var(--line);padding:clamp(38px,6vw,60px) 0 34px;
 <div class="wrap">
   <div class="head reveal">
     <h2>What it<br>costs.</h2>
-    <p>Build the session and see roughly where it lands. Confirmed when you book.</p>
-  </div>
-
-  <div class="estnote reveal">
-    <div><b>Estimate only</b>
-      These figures are a starting point for planning, not a quote. Call or text for the real
-      number on your session, including anything the estimator does not cover.</div>
+    <p>One rate, any room. Drag the slider to see what your session comes to.</p>
   </div>
 
   <div class="rates">
     <div class="calc reveal">
       <div class="field">
-        <span class="lbl">Which room</span>
-        <div class="seg" id="segRoom">
-          <button type="button" aria-pressed="true" data-rate="65">Control Room</button>
-          <button type="button" aria-pressed="false" data-rate="45">Vocal Booth</button>
-          <button type="button" aria-pressed="false" data-rate="95">Podcast Studio</button>
-        </div>
+        <span class="lbl">The rate</span>
+        <p class="rate-big">$45<span>an hour</span></p>
+        <p class="rate-note">Control room, vocal booth or the podcast set &mdash; same price,
+          whichever room you need.</p>
       </div>
       <div class="field">
         <span class="lbl">How long</span>
-        <input type="range" id="hrs" min="2" max="12" step="1" value="4"
+        <input type="range" id="hrs" min="1" max="12" step="1" value="4"
                aria-label="Session length in hours">
-        <div class="hrs"><span>2 hr minimum</span><span><b id="hrsVal">4</b> hours</span><span>12 hr</span></div>
+        <div class="hrs"><span>1 hr</span><span><b id="hrsVal">4</b> hours</span><span>12 hr</span></div>
       </div>
       <div class="field">
-        <span class="lbl">Add to it</span>
-        <div class="seg" id="segAdd">
-          <button type="button" aria-pressed="true" data-add="0" data-name="Engineer on the session">Engineer</button>
-          <button type="button" aria-pressed="false" data-add="150" data-name="Mix &amp; master">Mix &amp; master</button>
-          <button type="button" aria-pressed="false" data-add="200" data-name="Multi-camera video">Video</button>
-        </div>
+        <span class="lbl">Ask about</span>
+        <ul class="quoted">
+          <li>Engineer on the session</li>
+          <li>Mixing and mastering</li>
+          <li>Multi-camera video</li>
+          <li>Photo and content days</li>
+        </ul>
+        <p class="rate-note">Quoted on the session. Mention what you need when you book.</p>
       </div>
     </div>
 
     <div class="total reveal">
-      <span class="lbl">Estimated</span>
-      <p class="amount" id="amount">$260</p>
-      <p class="sub" id="subline">Control Room · 4 hours</p>
-      <ul class="lines" id="lines"></ul>
+      <span class="lbl">Session total</span>
+      <p class="amount" id="amount">$180</p>
+      <p class="sub" id="subline">4 hours at $45</p>
       <a class="btn" href="#book">Hold this slot</a>
-      <p class="fine">Sessions over 8 hours take 10% off the room. Deposit holds the date.</p>
+      <p class="fine">Studio time only. Anything above is quoted when you book.</p>
     </div>
   </div>
 </div>
@@ -878,32 +875,18 @@ document.addEventListener("keydown", function(e){
   else if (e.key === "ArrowRight") show(at + 1);
 });
 
-/* ---- session estimator ---- */
-var rate = 65, hours = 4, addOn = 0, addName = "Engineer on the session",
-    roomName = "Control Room";
-function seg(id, fn){
-  var box = document.getElementById(id);
-  box.addEventListener("click", function(ev){
-    var b = ev.target.closest("button"); if (!b) return;
-    box.querySelectorAll("button").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
-    b.setAttribute("aria-pressed","true"); fn(b); render();
-  });
-}
-seg("segRoom", function(b){ rate = +b.dataset.rate; roomName = b.textContent.trim(); });
-seg("segAdd",  function(b){ addOn = +b.dataset.add; addName = b.dataset.name; });
+/* ---- session total ----
+   One flat rate, confirmed by Sean 2026-11-02: $45/hour, any room. Everything
+   else is quoted per session, so nothing else gets a number on this page. */
+var RATE = 45, hours = 4;
 document.getElementById("hrs").addEventListener("input", function(e){
   hours = +e.target.value; document.getElementById("hrsVal").textContent = hours; render();
 });
 function render(){
-  var room = rate * hours;
-  var disc = hours >= 8 ? Math.round(room * .10) : 0;
-  var total = room + addOn - disc;
+  var total = RATE * hours;
   document.getElementById("amount").textContent = "$" + total.toLocaleString();
-  document.getElementById("subline").textContent = roomName + " · " + hours + " hours";
-  var li = "<li>" + roomName + " · " + hours + " hr <b>$" + room.toLocaleString() + "</b></li>";
-  li += "<li>" + addName + " <b>" + (addOn ? "$" + addOn.toLocaleString() : "included") + "</b></li>";
-  if (disc) li += "<li>Day-rate discount <b>&minus;$" + disc.toLocaleString() + "</b></li>";
-  document.getElementById("lines").innerHTML = li;
+  document.getElementById("subline").textContent =
+    hours + (hours === 1 ? " hour" : " hours") + " at $" + RATE;
 }
 render();
 
@@ -927,7 +910,7 @@ f.addEventListener("submit", function(ev){
     "Details:",
     g("m") || "(none)",
     "",
-    "Estimate shown on the site: " + document.getElementById("amount").textContent +
+    "Studio time on the site: " + document.getElementById("amount").textContent +
       " (" + document.getElementById("subline").textContent + ")",
     "Sent from the Tha Carter Studios website booking form"
   ].join("\n");
