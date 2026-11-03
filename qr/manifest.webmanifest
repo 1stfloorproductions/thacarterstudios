@@ -1,0 +1,29 @@
+{
+  "name": "Tha Carter Studios — Scan",
+  "short_name": "Carter QR",
+  "description": "Show this code so people can reach Tha Carter Studios — website, Instagram, phone, email, or save the contact.",
+  "start_url": "./",
+  "scope": "./",
+  "id": "/thacarterstudios/qr/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B0A08",
+  "theme_color": "#0B0A08",
+  "categories": ["music", "business", "utilities"],
+  "shortcuts": [
+    { "name": "Website", "short_name": "Website", "description": "Code for the studio site",
+      "url": "./?c=site", "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }] },
+    { "name": "Instagram", "short_name": "Instagram", "description": "Code for @thacarterstudios",
+      "url": "./?c=ig", "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }] },
+    { "name": "Call", "short_name": "Call", "description": "Code that dials the studio",
+      "url": "./?c=call", "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }] },
+    { "name": "Save contact", "short_name": "Card", "description": "Code that saves Sean Carter's contact",
+      "url": "./?c=card", "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }] }
+  ],
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "./icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

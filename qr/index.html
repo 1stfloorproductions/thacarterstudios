@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>Tha Carter Studios — Scan</title>
+<meta name="description" content="Scan to reach Tha Carter Studios in Newark, NJ — website, Instagram, phone, email, or save the contact.">
+<link rel="canonical" href="https://1stfloorproductions.github.io/thacarterstudios/qr/">
+
+<meta name="theme-color" content="#0B0A08">
+<meta name="color-scheme" content="dark">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Carter QR">
+<link rel="apple-touch-icon" href="./icon-180.png">
+<link rel="icon" href="./icon-192.png">
+
+<style>
+@font-face{font-family:"Carter Black";src:url("./carter-black.woff2") format("woff2");font-display:swap}
+@font-face{font-family:"Carter Caps";src:url("./carter-caps.woff2") format("woff2");font-weight:600;font-display:swap}
+
+:root{
+  --night:#0B0A08; --ink:#14110D; --panel:#131109; --surface:#1A1610;
+  --brass:#E3B14A; --brass-dk:#A97C22; --royal:#2740C8; --ember:#D9502F;
+  --bone:#F5F1E8; --mute:#98907F;
+  --line:rgba(227,177,74,.20);
+  --caps:"Carter Caps",ui-sans-serif,"Segoe UI",Roboto,sans-serif;
+  --disp:"Carter Black",Georgia,serif;
+  --body:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  background:var(--night);color:var(--bone);font-family:var(--body);
+  min-height:100dvh;overflow:hidden;overscroll-behavior:none;
+  -webkit-user-select:none;user-select:none;
+}
+/* ambient brand wash — the two lights from the site */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(70% 45% at 50% 6%, rgba(227,177,74,.15), transparent 70%),
+    radial-gradient(60% 40% at 50% 100%, rgba(39,64,200,.16), transparent 70%),
+    linear-gradient(180deg,var(--night) 0%,#100E0A 55%,var(--night) 100%);
+}
+
+.wrap{
+  position:relative;z-index:1;
+  min-height:100dvh;display:flex;flex-direction:column;align-items:center;
+  padding:max(14px,env(safe-area-inset-top)) 18px max(10px,env(safe-area-inset-bottom));
+  gap:clamp(8px,1.6dvh,18px);
+}
+
+/* masthead */
+.top{width:100%;display:flex;align-items:center;justify-content:space-between;flex:0 0 auto}
+.brand{display:flex;align-items:center;gap:9px;min-width:0}
+.brand img{width:26px;height:26px;border-radius:6px;flex:0 0 auto}
+.brand span{font-family:var(--disp);font-size:16px;color:var(--brass);line-height:1;white-space:nowrap}
+.live{font-family:var(--caps);font-size:9.5px;letter-spacing:.18em;color:var(--mute);
+  display:flex;align-items:center;gap:6px;text-transform:uppercase}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--ember);
+  box-shadow:0 0 0 0 rgba(217,80,47,.55);animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(217,80,47,.5)}70%,100%{box-shadow:0 0 0 9px rgba(217,80,47,0)}}
+
+.eyebrow{font-family:var(--caps);font-size:10px;letter-spacing:.32em;color:var(--brass);
+  text-transform:uppercase;flex:0 0 auto;opacity:.92}
+
+/* the code */
+.stage{flex:1 1 auto;display:flex;align-items:center;justify-content:center;width:100%;min-height:0}
+.finder{position:relative;width:min(86vw,52dvh,390px);aspect-ratio:1;padding:14px;cursor:pointer}
+.finder i{position:absolute;width:24px;height:24px;border:2.5px solid var(--brass);border-radius:3px}
+.finder i:nth-child(1){top:0;left:0;border-right:0;border-bottom:0}
+.finder i:nth-child(2){top:0;right:0;border-left:0;border-bottom:0}
+.finder i:nth-child(3){bottom:0;left:0;border-right:0;border-top:0}
+.finder i:nth-child(4){bottom:0;right:0;border-left:0;border-top:0}
+.plate{position:relative;width:100%;height:100%;background:#fff;border-radius:10px;overflow:hidden;
+  box-shadow:0 0 0 1px rgba(227,177,74,.28), 0 0 44px -6px rgba(227,177,74,.32), 0 18px 44px -18px #000;
+  display:grid;place-items:center}
+.plate svg{width:100%;height:100%;display:block}
+.plate::after{content:"";position:absolute;left:0;right:0;height:34%;
+  background:linear-gradient(180deg,rgba(227,177,74,0),rgba(227,177,74,.22),rgba(227,177,74,0));
+  animation:sweep 3.4s cubic-bezier(.55,0,.45,1) infinite;mix-blend-mode:multiply;pointer-events:none}
+@keyframes sweep{0%{transform:translateY(-120%)}55%,100%{transform:translateY(330%)}}
+
+/* identity */
+.id{text-align:center;flex:0 0 auto;display:grid;gap:3px}
+.handle{font-family:var(--disp);font-size:clamp(20px,5.6vw,27px);letter-spacing:-.01em;color:var(--bone)}
+.handle span{color:var(--brass)}
+.target{font-family:var(--caps);font-size:11px;color:var(--mute);letter-spacing:.06em;word-break:break-all}
+
+/* switcher */
+.chips{flex:0 0 auto;display:flex;gap:6px;width:100%;justify-content:center;flex-wrap:wrap}
+.chip{font-family:var(--caps);font-size:10.5px;font-weight:600;letter-spacing:.14em;
+  color:var(--mute);background:var(--panel);border:1px solid rgba(245,241,232,.12);
+  border-radius:999px;padding:8px 13px;cursor:pointer;text-transform:uppercase;
+  transition:color .18s,border-color .18s,background .18s}
+.chip[aria-selected="true"]{color:var(--ink);background:var(--brass);border-color:var(--brass)}
+.chip:focus-visible{outline:2px solid var(--royal);outline-offset:2px}
+
+/* footer */
+.foot{flex:0 0 auto;width:100%;display:grid;gap:8px;justify-items:center}
+.tag{font-size:11px;color:var(--mute);text-align:center;line-height:1.55}
+.tag b{color:var(--bone);font-weight:600}
+.share{font-family:var(--caps);font-size:10px;letter-spacing:.18em;color:var(--brass-dk);
+  background:none;border:0;padding:4px 8px;cursor:pointer;text-transform:uppercase}
+.share:focus-visible{outline:2px solid var(--brass);outline-offset:2px;border-radius:4px}
+/* console-meter motif */
+.band{display:flex;align-items:flex-end;gap:3px;height:16px;opacity:.5}
+.band s{width:3px;background:linear-gradient(180deg,var(--brass),var(--ember));
+  border-radius:2px;animation:eq 1.5s ease-in-out infinite alternate}
+@keyframes eq{from{height:12%}to{height:100%}}
+
+/* focus mode */
+body.zoom .top,body.zoom .eyebrow,body.zoom .id,body.zoom .chips,body.zoom .foot{display:none}
+body.zoom .finder{width:min(94vw,94dvh);padding:10px}
+body.zoom .plate{box-shadow:0 0 0 1px rgba(227,177,74,.3)}
+.hint{position:fixed;left:0;right:0;bottom:max(14px,env(safe-area-inset-bottom));
+  text-align:center;font-family:var(--caps);font-size:10px;letter-spacing:.2em;
+  color:var(--mute);display:none;z-index:2;text-transform:uppercase}
+body.zoom .hint{display:block}
+
+@media (prefers-reduced-motion:reduce){
+  .plate::after,.dot,.band s{animation:none}
+  .plate::after{display:none}
+  .band s{height:55%}
+}
+@media (max-height:620px){
+  .band{display:none}
+  .handle{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <img src="./icon-192.png" alt="" width="26" height="26">
+      <span>Tha Carter</span>
+    </div>
+    <div class="live"><span class="dot"></span>Newark, NJ</div>
+  </header>
+
+  <p class="eyebrow" id="eyebrow">Point your camera here</p>
+
+  <div class="stage">
+    <div class="finder" id="finder" role="button" tabindex="0" aria-label="Enlarge the code">
+      <i></i><i></i><i></i><i></i>
+      <div class="plate">
+        <svg id="qr" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img">
+          <title id="qrtitle">QR code</title>
+          <path id="qrpath" fill="#0B0A08"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="id">
+    <div class="handle">Tha Carter <span>Studios</span></div>
+    <div class="target" id="target">1stfloorproductions.github.io</div>
+  </div>
+
+  <div class="chips" id="chips" role="tablist" aria-label="Choose what the code opens"></div>
+
+  <footer class="foot">
+    <p class="tag"><b>Recording · Podcast · Video</b><br>24/7 Entertainment · Open around the clock</p>
+    <div class="band" aria-hidden="true"></div>
+    <button class="share" id="share" type="button">Share link</button>
+  </footer>
+</div>
+
+<p class="hint">Tap to exit</p>
+
+<script>
+/* Each code is baked in as a bitmap: n = modules per side, d = the grid packed
+   four pixels to a hex digit, row by row. No encoder ships with the page and
+   nothing is fetched, so the codes render instantly and work offline. */
+const QR = {
+  "site":  {"n":33,"label":"Website","sub":"1stfloorproductions.github.io/thacarterstudios","url":"https://1stfloorproductions.github.io/thacarterstudios/","d":"feee263fc14369506eb5878bb74859a5dbabdd02ec108d6d07faaaaafe001b37009feac8cb8496898706e74bfbe78ca9026eac43920ee2913a9008944081897541a563990bbc24f0dc35d2cd44f5a71d600df3bd1a095f62f3886268b984b76a4695a7f3c619fc8058f1c5bfb6f4ea905aef31dbaa8c3f9dd7e5c2aee89c7e6f045c20fffed9d9980"},
+  "ig":    {"n":33,"label":"Instagram","sub":"instagram.com/thacarterstudios","url":"https://www.instagram.com/thacarterstudios/","d":"fe433b3fc118a7d06e82b26bb744a885dba24d62ec17935907faaaaafe0064bd00969f94d05e704578d69815aea2076b3db53c901e58e2ce394d4b20bdec004eed42daea5fad7a26438a0ef8aa80eea1ae9a17b68e3d0184fdf32f8d252882eba14a089b0754fc00580d46ff9e032bd05111110ba4792fddd78aed4ae8900f33047bc9c0fed6a4e90"},
+  "call":  {"n":25,"label":"Call","sub":"646 200 2089","url":"tel:+16462002089","d":"fe91bfc171906e93cbb75905dba4c2ec119107faaafe014c00b75725a6542101a690042ed462380bb88fa95d89aa45321a693ed0fa0066c4ffa62af059112ba3cfc5d67deeeb70b5040234fe8b338"},
+  "email": {"n":29,"label":"Email","sub":"thacarterstudios@gmail.com","url":"mailto:thacarterstudios@gmail.com","d":"fea99bfc1418106e9fcabb75a125dba0c52ec1310d07faaaafe01ac900b746e25c4e8ddfe28aca0cc02e7038608407969e0b37df48ff701fb19863f1258263e849249068780363ca65b5dffb00677c5ffb936a505b3513ba7b4ff5d53caf6eaead5304a179afed71b90"},
+  "card":  {"n":49,"label":"Save contact","sub":"Sean Carter · save to phone","url":"MECARD:N:Carter,Sean;TEL:6462002089;EMAIL:thacarterstudios@gmail.com;URL:https://1stfloorproductions.github.io/thacarterstudios/;NOTE:Tha Carter Studios / 24-7 Entertainment, Newark NJ;;","d":"fe914c6750bfc16afda2c1d06ebb947d3a6bb75d0b8d2ea5dba500bf7842ec1475b14b5107faaaaaaaaafe00e6b4631a00ce4ae7e2af97bc74a4df69b41efc881f9adadb87ca7e99b35537632948fac9e938673c53b51ec55abc459073f0660138554282a396ebcaf2a4a75f29989ec1f0408dbf00284972b9b37e6d073f6cae9342f96fb85b647f87dfaa43e0b187f46853146ac2b2b09cabb46e8719e94603fa4afd9bff87399d3cb9c4dfabef271eed72af90573e3ad6ee98ab2fde29096e786970442eaaa473d8b7200a8ce34d4532dfe00207f71017532c054c4ef18f532ccf02257a54f631651e94d17b9e58e2235969b8e7e353bff4befa006ca51be5c73f8a03aaa9ab1052b4c401b1ebacff7f6ccffdd298517676dae97348699b5f059b04017b16fe83ed529af78"}
+};
+
+const qrSvg=document.getElementById('qr'),qrPath=document.getElementById('qrpath'),
+      qrTitle=document.getElementById('qrtitle'),targetEl=document.getElementById('target'),
+      chipsEl=document.getElementById('chips'),eyebrow=document.getElementById('eyebrow');
+let current='site';
+
+function draw(key){
+  const q=QR[key],n=q.n;
+  let bits='';
+  for(const ch of q.d) bits+=parseInt(ch,16).toString(2).padStart(4,'0');
+  let d='';
+  for(let y=0;y<n;y++){
+    for(let x=0;x<n;x++){
+      if(bits.charCodeAt(y*n+x)===49) d+='M'+x+' '+y+'h1v1h-1z';
+    }
+  }
+  qrSvg.setAttribute('viewBox','-4 -4 '+(n+8)+' '+(n+8));
+  qrPath.setAttribute('d',d);
+  qrTitle.textContent='QR code for '+q.sub;
+  targetEl.textContent=q.sub;
+  eyebrow.textContent = key==='card' ? 'Scan to save the contact' : 'Point your camera here';
+  current=key;
+  [...chipsEl.children].forEach(c=>c.setAttribute('aria-selected',String(c.dataset.k===key)));
+}
+
+Object.keys(QR).forEach(k=>{
+  const b=document.createElement('button');
+  b.className='chip'; b.type='button'; b.role='tab'; b.dataset.k=k;
+  b.textContent=QR[k].label; b.setAttribute('aria-selected','false');
+  b.addEventListener('click',()=>{draw(k); if(navigator.vibrate) navigator.vibrate(8);});
+  chipsEl.appendChild(b);
+});
+const startKey = new URLSearchParams(location.search).get('c');
+draw(QR[startKey] ? startKey : 'site');
+
+/* console-meter band */
+const band=document.querySelector('.band');
+for(let i=0;i<18;i++){
+  const s=document.createElement('s');
+  s.style.animationDelay=(-Math.random()*1.5).toFixed(2)+'s';
+  s.style.animationDuration=(0.9+Math.random()*1.1).toFixed(2)+'s';
+  band.appendChild(s);
+}
+
+/* focus mode — bigger code, nothing else on screen */
+const finder=document.getElementById('finder');
+function toggleZoom(){
+  const on=document.body.classList.toggle('zoom');
+  if(on && document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(()=>{});
+  if(!on && document.fullscreenElement) document.exitFullscreen().catch(()=>{});
+}
+finder.addEventListener('click',toggleZoom);
+finder.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleZoom();}});
+document.querySelector('.hint').addEventListener('click',toggleZoom);
+
+/* keep the screen lit while someone is scanning */
+let lock=null;
+async function hold(){
+  try{ if('wakeLock' in navigator && document.visibilityState==='visible') lock=await navigator.wakeLock.request('screen'); }catch(e){}
+}
+hold();
+document.addEventListener('visibilitychange',hold);
+
+/* share */
+document.getElementById('share').addEventListener('click',async()=>{
+  const btn=document.getElementById('share');
+  if(current==='card'){ location.href='mailto:thacarterstudios@gmail.com'; return; }
+  if(current==='call'){ location.href='tel:+16462002089'; return; }
+  const url=QR[current].url;
+  try{
+    if(navigator.share){ await navigator.share({title:'Tha Carter Studios',url}); }
+    else { await navigator.clipboard.writeText(url); btn.textContent='Copied'; setTimeout(()=>btn.textContent='Share link',1600); }
+  }catch(e){}
+});
+
+if('serviceWorker' in navigator) addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script>
+</body>
+</html>

@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tha Carter Studios — recording, podcast &amp; video studio in Newark, NJ</title>
+<meta name="description" content="Tha Carter Studios in Newark, New Jersey. Music recording and mixing control room, soundproof vocal booth, three-camera video podcast set, 24/7 Entertainment interview lounge, full client kitchen. Open around the clock, by appointment.">
+<meta name="theme-color" content="#0B0A08">
+<link rel="canonical" href="https://1stfloorproductions.github.io/thacarterstudios/">
+<meta property="og:type" content="business.business">
+<meta property="og:site_name" content="Tha Carter Studios">
+<meta property="og:title" content="Tha Carter Studios — Newark, NJ">
+<meta property="og:description" content="Recording, podcast and video rooms in Newark, New Jersey. Open around the clock, by appointment.">
+<meta property="og:url" content="https://1stfloorproductions.github.io/thacarterstudios/">
+<meta property="og:image" content="https://1stfloorproductions.github.io/thacarterstudios/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The main video podcasting set at Tha Carter Studios in Newark, New Jersey.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tha Carter Studios — Newark, NJ">
+<meta name="twitter:description" content="Recording, podcast and video rooms in Newark, New Jersey. Open around the clock, by appointment.">
+<meta name="twitter:image" content="https://1stfloorproductions.github.io/thacarterstudios/assets/og.jpg">
+<link rel="icon" href="assets/brand/tha-carter-monogram-gold-on-ink.svg">
+<link rel="apple-touch-icon" href="assets/brand/tha-carter-monogram-gold-on-ink.svg">
+<script>document.documentElement.className='js';</script>
+<style>
+@font-face{font-family:"Carter Black";src:url("assets/fonts/carter-black.woff2") format("woff2");font-display:swap}
+@font-face{font-family:"Carter Caps";src:url("assets/fonts/carter-caps.woff2") format("woff2");font-weight:600;font-display:swap}
+
+:root{
+  --night:#0B0A08; --ink:#14110D; --panel:#131109; --panel2:#1A1610;
+  --brass:#E3B14A; --brass-lt:#F6D98A; --brass-dk:#A97C22;
+  --royal:#2740C8; --ember:#D9502F; --bone:#F5F1E8; --mute:#98907F;
+  --line:rgba(227,177,74,.20);
+  --caps:"Carter Caps",ui-sans-serif,"Segoe UI",Roboto,sans-serif;
+  --body:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --pad:clamp(18px,5vw,40px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--night);color:var(--bone);font-family:var(--body);
+  font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brass);text-decoration-color:var(--line);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:3px}
+.wrap{width:min(1140px,100% - var(--pad)*2);margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:12px;top:12px;z-index:99;background:var(--brass);color:var(--ink);
+  padding:10px 16px;border-radius:6px;font-family:var(--caps);letter-spacing:.12em}
+
+/* ---------- nav ---------- */
+header{position:sticky;top:0;z-index:40;background:rgba(11,10,8,.86);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:14px;padding:11px 0;
+  width:min(1140px,100% - var(--pad)*2);margin-inline:auto}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:0 0 auto}
+.brand img{width:34px;height:34px;border-radius:8px}
+.brand span{font-family:"Carter Black",serif;font-size:21px;color:var(--brass);
+  line-height:1;white-space:nowrap}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{font-family:var(--caps);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mute);text-decoration:none}
+.nav ul a:hover{color:var(--brass)}
+.btn{display:inline-block;font-family:var(--caps);font-size:12.5px;letter-spacing:.16em;
+  text-transform:uppercase;padding:12px 22px;border-radius:5px;text-decoration:none;
+  border:1px solid var(--brass);color:var(--ink);background:var(--brass);cursor:pointer;
+  transition:transform .15s ease,background .15s ease}
+.btn:hover{background:var(--brass-lt);transform:translateY(-1px)}
+.btn.ghost{background:none;color:var(--brass)}
+.btn.ghost:hover{background:rgba(227,177,74,.1)}
+.nav .btn{margin-left:22px;padding:10px 18px}
+@media(max-width:900px){.nav ul,.nav .btn{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(46px,9vw,92px) 0 clamp(40px,7vw,72px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-30% 40% 40% -20%;
+  background:radial-gradient(circle,rgba(227,177,74,.10),transparent 65%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:30% -25% -30% 45%;
+  background:radial-gradient(circle,rgba(39,64,200,.13),transparent 62%);pointer-events:none}
+.hero>*{position:relative}
+.hero-grid{display:grid;gap:clamp(30px,5vw,52px);align-items:center}
+@media(min-width:1000px){.hero-grid{grid-template-columns:1.06fr .94fr}}
+.hero-shot{margin:0;position:relative;border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 30px 70px -30px rgba(0,0,0,.9)}
+.hero-shot img{width:100%;aspect-ratio:4/3.4;object-fit:cover;cursor:zoom-in}
+.hero-shot figcaption{position:absolute;inset:auto 0 0 0;padding:44px 20px 18px;pointer-events:none;
+  background:linear-gradient(to top,rgba(11,10,8,.92),transparent);
+  font-family:var(--caps);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--brass)}
+@media(max-width:999px){.hero-shot img{aspect-ratio:16/11}}
+.eyebrow{font-family:var(--caps);font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--brass-dk);margin:0 0 18px}
+.lockup{width:min(600px,100%);height:auto;margin:0 0 10px}
+h1{margin:0 0 22px;font-family:"Carter Black",serif;font-weight:400;
+  font-size:clamp(14px,1.6vw,15.5px);letter-spacing:.04em;color:var(--mute);
+  text-transform:none;line-height:1.5}
+.lede{font-size:clamp(17px,2.2vw,20px);color:#CFC6B4;max-width:56ch;margin:0 0 30px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+
+/* signature: the live dial */
+.clock{display:flex;align-items:center;gap:20px;margin:38px 0 0;padding:20px 24px;
+  border:1px solid var(--line);border-radius:12px;background:rgba(19,17,9,.7);
+  max-width:520px}
+.dial{width:78px;height:78px;flex:0 0 auto}
+#sweep{transition:transform .18s cubic-bezier(.3,1.6,.5,1)}
+.clock-txt{min-width:0}
+.clock-txt .now{font-family:var(--caps);font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--brass);display:flex;align-items:center;gap:9px;margin:0 0 4px}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--ember);flex:0 0 auto;
+  animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.clock-txt .time{font-family:var(--caps);font-size:clamp(26px,5vw,34px);letter-spacing:.04em;
+  color:var(--bone);line-height:1.1;margin:0}
+.clock-txt small{display:block;color:var(--mute);font-size:13.5px;margin-top:6px;line-height:1.5}
+@media(prefers-reduced-motion:reduce){.pulse{animation:none}#sweep{transition:none}}
+
+/* ---------- section furniture ---------- */
+section{padding:clamp(54px,9vw,96px) 0;border-top:1px solid rgba(245,241,232,.07)}
+.head{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(26px,4vw,44px)}
+.head h2{font-family:"Carter Black",serif;font-weight:400;font-size:clamp(34px,6.5vw,56px);
+  line-height:1.02;margin:0;color:var(--bone)}
+.head p{margin:0 0 6px auto;color:var(--mute);font-size:14.5px;max-width:34ch}
+
+/* ---------- services ---------- */
+.svc{display:grid;gap:clamp(16px,2.4vw,22px)}
+@media(min-width:720px){.svc{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.svc{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--panel);border:1px solid rgba(245,241,232,.08);border-radius:14px;
+  padding:clamp(22px,3vw,28px);transition:border-color .25s ease}
+.card:hover{border-color:var(--line)}
+.card .n{font-family:var(--caps);font-size:11.5px;letter-spacing:.22em;color:var(--brass-dk);
+  display:block;margin-bottom:14px}
+.card h3{font-family:"Carter Black",serif;font-weight:400;font-size:clamp(21px,2.8vw,25px);
+  margin:0 0 10px;color:var(--bone);line-height:1.18}
+.card p{margin:0;color:var(--mute);font-size:15px}
+.card ul{list-style:none;padding:0;margin:16px 0 0}
+.card ul li{position:relative;padding-left:17px;color:var(--mute);font-size:14.5px;
+  margin-bottom:5px}
+.card ul li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;
+  border-radius:50%;background:var(--brass-dk)}
+
+/* ---------- gallery ---------- */
+.zone{margin-top:clamp(34px,5vw,56px)}
+.zone:first-of-type{margin-top:0}
+.zone-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+  padding-bottom:12px;margin-bottom:18px;border-bottom:1px solid rgba(245,241,232,.08)}
+.zone-head h3{font-family:var(--caps);font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--brass);margin:0}
+.zone-head p{margin:0;color:var(--mute);font-size:14px}
+.grid{display:grid;gap:clamp(12px,1.8vw,18px);grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr)}}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.grid.two{grid-template-columns:repeat(2,1fr)}}
+.shot{margin:0;position:relative;border-radius:12px;overflow:hidden;background:#000;
+  border:1px solid rgba(245,241,232,.08);transition:border-color .25s ease}
+.shot:hover{border-color:var(--line)}
+.shot img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in;
+  transition:transform .6s ease}
+.shot:hover img{transform:scale(1.045)}
+.shot.tall img{aspect-ratio:3/4}
+.shot figcaption{position:absolute;inset:auto 0 0 0;padding:34px 14px 12px;pointer-events:none;
+  background:linear-gradient(to top,rgba(11,10,8,.90),transparent);
+  font-family:var(--caps);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brass);line-height:1.45}
+@media(prefers-reduced-motion:reduce){.shot:hover img{transform:none}}
+
+/* ---------- on-air band ---------- */
+.band{position:relative;margin-top:clamp(18px,3vw,26px);border-radius:14px;overflow:hidden;
+  border:1px solid rgba(245,241,232,.08)}
+.band img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center 42%;cursor:zoom-in}
+.band figcaption{position:absolute;inset:auto 0 0 0;padding:26px var(--pad);pointer-events:none;
+  background:linear-gradient(to top,rgba(11,10,8,.94),transparent);
+  font-family:"Carter Black",serif;font-size:clamp(20px,3.4vw,30px);color:var(--bone)}
+.band figcaption small{display:block;font-family:var(--caps);font-size:11.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--brass);margin-bottom:7px}
+
+/* ---------- rates ---------- */
+.rates{display:grid;gap:clamp(18px,3vw,26px)}
+@media(min-width:860px){.rates{grid-template-columns:1.1fr .9fr;align-items:start}}
+.calc,.total{background:var(--panel);border:1px solid rgba(245,241,232,.08);border-radius:14px;
+  padding:clamp(20px,3vw,30px)}
+.field{margin-bottom:24px}
+.field:last-child{margin-bottom:0}
+label,.lbl{display:block;font-family:var(--caps);font-size:11.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--brass-dk);margin-bottom:11px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{font-family:var(--caps);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  padding:11px 15px;border-radius:7px;border:1px solid rgba(245,241,232,.14);background:none;
+  color:var(--mute);cursor:pointer;transition:all .18s ease}
+.seg button:hover{color:var(--bone);border-color:var(--line)}
+.seg button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--brass)}
+.hrs{display:flex;justify-content:space-between;font-family:var(--caps);font-size:12px;
+  color:var(--mute);margin-top:8px;letter-spacing:.1em}
+.hrs b{color:var(--brass);font-size:15px}
+.total{position:sticky;top:82px;background:linear-gradient(160deg,#1A1610,#100E09)}
+.total .lbl{margin-bottom:6px}
+.amount{font-family:var(--caps);font-size:clamp(40px,8vw,58px);color:var(--brass);line-height:1;
+  margin:0 0 4px;font-variant-numeric:tabular-nums}
+.total .sub{color:var(--mute);font-size:14px;margin:0 0 22px}
+.lines{list-style:none;padding:0;margin:0 0 22px;border-top:1px solid rgba(245,241,232,.09)}
+.lines li{display:flex;justify-content:space-between;gap:14px;padding:11px 0;font-size:14.5px;
+  border-bottom:1px solid rgba(245,241,232,.07);color:var(--mute)}
+.lines b{color:var(--bone);font-weight:600;font-variant-numeric:tabular-nums}
+.total .btn{width:100%;text-align:center}
+.total .fine{color:#6E6759;font-size:12.5px;margin:14px 0 0;line-height:1.5}
+.estnote{display:flex;gap:10px;align-items:flex-start;margin:0 0 clamp(22px,3vw,30px);
+  padding:14px 16px;border:1px solid var(--line);border-radius:10px;
+  background:rgba(227,177,74,.06);color:#CFC6B4;font-size:14px;line-height:1.55}
+.estnote b{color:var(--brass);font-family:var(--caps);font-size:11.5px;letter-spacing:.18em;
+  text-transform:uppercase;display:block;margin-bottom:3px}
+
+/* ---------- booking ---------- */
+.book{display:grid;gap:clamp(20px,3vw,32px)}
+@media(min-width:900px){.book{grid-template-columns:1fr .82fr}}
+form{background:var(--panel);border:1px solid rgba(245,241,232,.08);border-radius:14px;
+  padding:clamp(20px,3vw,32px)}
+.two{display:grid;gap:18px}
+@media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
+input[type=text],input[type=email],input[type=tel],input[type=date],select,textarea{width:100%;
+  background:rgba(0,0,0,.3);border:1px solid rgba(245,241,232,.14);border-radius:8px;
+  padding:13px 14px;color:var(--bone);font:inherit;font-size:15px}
+textarea{min-height:104px;resize:vertical}
+input::placeholder,textarea::placeholder{color:#6E6759}
+form .btn{margin-top:6px}
+.sent{display:none;text-align:center;padding:34px 20px}
+.sent.on{display:block}
+.sent h3{font-family:"Carter Black",serif;font-weight:400;font-size:30px;margin:14px 0 8px}
+.sent p{color:var(--mute);margin:0}
+.sent .tick{width:54px;height:54px;border-radius:50%;background:rgba(227,177,74,.14);
+  border:1px solid var(--brass);display:grid;place-items:center;margin:0 auto;color:var(--brass);
+  font-size:24px}
+form.hide{display:none}
+
+/* ---------- contact plate ---------- */
+.plate{background:linear-gradient(160deg,#1A1610,#100E09);border:1px solid var(--line);
+  border-radius:14px;padding:clamp(22px,3vw,30px)}
+.plate h3{font-family:"Carter Black",serif;font-weight:400;font-size:clamp(22px,3vw,27px);
+  margin:0 0 4px;color:var(--bone)}
+.plate .role{font-family:var(--caps);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--brass-dk);margin:0 0 22px}
+.plate .rows{list-style:none;padding:0;margin:0}
+.plate .rows li{display:flex;gap:14px;padding:13px 0;align-items:baseline;
+  border-top:1px solid rgba(245,241,232,.08);font-size:15px;color:var(--bone)}
+.plate .rows span{font-family:var(--caps);font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--brass-dk);flex:0 0 76px}
+.plate .rows a{color:var(--bone);text-decoration:none;word-break:break-word}
+.plate .rows a:hover{color:var(--brass)}
+.plate .acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.plate .acts .btn{flex:1 1 auto;text-align:center;padding:13px 16px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:clamp(38px,6vw,60px) 0 34px;
+  background:linear-gradient(to bottom,transparent,rgba(19,17,9,.9))}
+.foot{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start}
+.foot img{width:74px;border-radius:14px}
+.foot .fl{display:flex;gap:22px;flex-wrap:wrap;margin:0 0 0 auto;list-style:none;padding:0}
+.foot .fl a{font-family:var(--caps);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mute);text-decoration:none}
+.foot .fl a:hover{color:var(--brass)}
+.legal{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;margin-top:32px;
+  padding-top:22px;border-top:1px solid rgba(245,241,232,.07);color:#6E6759;font-size:13px}
+.legal a{color:#8A8172}
+
+/* ---------- lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(6,5,4,.94);display:none;
+  place-items:center;padding:var(--pad);backdrop-filter:blur(6px)}
+.lb.on{display:grid}
+.lb img{max-width:min(1100px,100%);max-height:76vh;border-radius:12px;
+  border:1px solid var(--line);object-fit:contain}
+.lb p{font-family:var(--caps);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--brass);text-align:center;margin:16px auto 0;max-width:62ch;line-height:1.6}
+.lb .x{position:absolute;top:16px;right:18px;background:rgba(11,10,8,.7);border:1px solid var(--line);
+  color:var(--brass);width:44px;height:44px;border-radius:50%;font-size:22px;cursor:pointer;
+  line-height:1;z-index:2}
+.lb .nav-b{position:absolute;top:50%;transform:translateY(-50%);background:rgba(11,10,8,.7);
+  border:1px solid var(--line);color:var(--brass);width:46px;height:46px;border-radius:50%;
+  font-size:20px;cursor:pointer;line-height:1;z-index:2}
+.lb .prev{left:14px}
+.lb .next{right:14px}
+.lb .count{position:absolute;top:22px;left:20px;font-family:var(--caps);font-size:11.5px;
+  letter-spacing:.18em;color:var(--mute)}
+
+/* ---------- reveal ---------- */
+.js .reveal{opacity:0;transform:translateY(18px);
+  transition:opacity .6s ease var(--d,0ms),transform .6s ease var(--d,0ms)}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+<nav class="nav">
+  <a class="brand" href="#top">
+    <img src="assets/brand/tha-carter-monogram-gold-on-ink.svg" alt="" width="34" height="34">
+    <span>Tha Carter</span>
+  </a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#studio">The Studio</a></li>
+    <li><a href="#rates">Rates</a></li>
+    <li><a href="#book">Book</a></li>
+  </ul>
+  <a class="btn" href="tel:+16462002089">Call the studio</a>
+</nav>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<div class="hero" id="top">
+<div class="wrap hero-grid">
+  <div>
+    <p class="eyebrow">Newark, New Jersey &nbsp;·&nbsp; 24/7 Entertainment</p>
+    <img class="lockup" src="assets/brand/tha-carter-wordmark-gold.svg"
+         alt="Tha Carter Studios" width="957" height="303">
+    <h1>Recording, podcast and video studio in Newark, New Jersey</h1>
+    <p class="lede">A control room, a soundproof vocal booth, a three-camera podcast set
+      and a full client kitchen. One door, four rooms, and somebody here when you need the key.</p>
+    <div class="cta-row">
+      <a class="btn" href="#book">Book a session</a>
+      <a class="btn ghost" href="#studio">See the rooms</a>
+    </div>
+
+    <div class="clock">
+      <svg viewBox="0 0 220 220" class="dial" aria-hidden="true"><circle cx="110" cy="110" r="100" fill="none" stroke="var(--royal)" stroke-width="9.4"/><g stroke="var(--royal)"><path d="M110.0,19.4 L110.0,33.9" stroke-width="4.20"/><path d="M119.5,19.9 L118.7,26.9" stroke-width="1.50"/><path d="M128.8,21.4 L127.4,28.2" stroke-width="1.50"/><path d="M138.0,23.8 L135.8,30.5" stroke-width="1.50"/><path d="M146.9,27.2 L144.0,33.6" stroke-width="1.50"/><path d="M155.3,31.5 L148.1,44.1" stroke-width="4.20"/><path d="M163.3,36.7 L159.1,42.4" stroke-width="1.50"/><path d="M170.6,42.7 L165.9,47.9" stroke-width="1.50"/><path d="M177.3,49.4 L172.1,54.1" stroke-width="1.50"/><path d="M183.3,56.7 L177.6,60.9" stroke-width="1.50"/><path d="M188.5,64.7 L175.9,72.0" stroke-width="4.20"/><path d="M192.8,73.1 L186.4,76.0" stroke-width="1.50"/><path d="M196.2,82.0 L189.5,84.2" stroke-width="1.50"/><path d="M198.6,91.2 L191.8,92.6" stroke-width="1.50"/><path d="M200.1,100.5 L193.1,101.3" stroke-width="1.50"/><path d="M200.6,110.0 L186.1,110.0" stroke-width="4.20"/><path d="M200.1,119.5 L193.1,118.7" stroke-width="1.50"/><path d="M198.6,128.8 L191.8,127.4" stroke-width="1.50"/><path d="M196.2,138.0 L189.5,135.8" stroke-width="1.50"/><path d="M192.8,146.9 L186.4,144.0" stroke-width="1.50"/><path d="M188.5,155.3 L175.9,148.0" stroke-width="4.20"/><path d="M183.3,163.3 L177.6,159.1" stroke-width="1.50"/><path d="M177.3,170.6 L172.1,165.9" stroke-width="1.50"/><path d="M170.6,177.3 L165.9,172.1" stroke-width="1.50"/><path d="M163.3,183.3 L159.1,177.6" stroke-width="1.50"/><path d="M155.3,188.5 L148.1,175.9" stroke-width="4.20"/><path d="M146.9,192.8 L144.0,186.4" stroke-width="1.50"/><path d="M138.0,196.2 L135.8,189.5" stroke-width="1.50"/><path d="M128.8,198.6 L127.4,191.8" stroke-width="1.50"/><path d="M119.5,200.1 L118.7,193.1" stroke-width="1.50"/><path d="M110.0,200.6 L110.0,186.1" stroke-width="4.20"/><path d="M100.5,200.1 L101.3,193.1" stroke-width="1.50"/><path d="M91.2,198.6 L92.6,191.8" stroke-width="1.50"/><path d="M82.0,196.2 L84.2,189.5" stroke-width="1.50"/><path d="M73.1,192.8 L76.0,186.4" stroke-width="1.50"/><path d="M64.7,188.5 L72.0,175.9" stroke-width="4.20"/><path d="M56.7,183.3 L60.9,177.6" stroke-width="1.50"/><path d="M49.4,177.3 L54.1,172.1" stroke-width="1.50"/><path d="M42.7,170.6 L47.9,165.9" stroke-width="1.50"/><path d="M36.7,163.3 L42.4,159.1" stroke-width="1.50"/><path d="M31.5,155.3 L44.1,148.0" stroke-width="4.20"/><path d="M27.2,146.9 L33.6,144.0" stroke-width="1.50"/><path d="M23.8,138.0 L30.5,135.8" stroke-width="1.50"/><path d="M21.4,128.8 L28.2,127.4" stroke-width="1.50"/><path d="M19.9,119.5 L26.9,118.7" stroke-width="1.50"/><path d="M19.4,110.0 L33.9,110.0" stroke-width="4.20"/><path d="M19.9,100.5 L26.9,101.3" stroke-width="1.50"/><path d="M21.4,91.2 L28.2,92.6" stroke-width="1.50"/><path d="M23.8,82.0 L30.5,84.2" stroke-width="1.50"/><path d="M27.2,73.1 L33.6,76.0" stroke-width="1.50"/><path d="M31.5,64.7 L44.1,71.9" stroke-width="4.20"/><path d="M36.7,56.7 L42.4,60.9" stroke-width="1.50"/><path d="M42.7,49.4 L47.9,54.1" stroke-width="1.50"/><path d="M49.4,42.7 L54.1,47.9" stroke-width="1.50"/><path d="M56.7,36.7 L60.9,42.4" stroke-width="1.50"/><path d="M64.7,31.5 L71.9,44.1" stroke-width="4.20"/><path d="M73.1,27.2 L76.0,33.6" stroke-width="1.50"/><path d="M82.0,23.8 L84.2,30.5" stroke-width="1.50"/><path d="M91.2,21.4 L92.6,28.2" stroke-width="1.50"/><path d="M100.5,19.9 L101.3,26.9" stroke-width="1.50"/></g><path d="M67.0,55.5 L153.0,55.5 L120.3,164.5 L94.9,164.5 L120.3,80.0 L67.0,80.0 Z" fill="var(--ember)"/><g id="sweep" style="transform-origin:110px 110px"><circle cx="110" cy="10" r="7.5" fill="var(--brass)"/></g></svg>
+      <div class="clock-txt">
+        <p class="now"><span class="pulse"></span><span id="status">Open now</span></p>
+        <p class="time" id="clockTime">--:-- --</p>
+        <small id="clockNote">Sessions run around the clock. 3&nbsp;AM is a normal start time here.</small>
+      </div>
+    </div>
+  </div>
+
+  <figure class="hero-shot reveal">
+    <img src="assets/photos/the-carter-studios-podcast-set-main-wide-view-800.jpg"
+         srcset="assets/photos/the-carter-studios-podcast-set-main-wide-view-800.jpg 800w,
+                 assets/photos/the-carter-studios-podcast-set-main-wide-view-1600.jpg 1600w"
+         sizes="(min-width:1000px) 46vw, 92vw"
+         width="1600" height="1200" fetchpriority="high" data-lb
+         alt="Wide view of the main podcasting set at The Carter Studios featuring two black and gray leather couches, dual boom microphones, round marble nesting tables, a central TV screen, a Good Vibes Only neon sign, and overhead seamless paper backdrop rolls."
+         data-cap="Main video podcasting set">
+    <figcaption>The podcast set</figcaption>
+  </figure>
+</div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+<div class="wrap">
+  <div class="head reveal">
+    <h2>What we<br>do here.</h2>
+    <p>Tracking, mixing, podcasts, interviews and content. Engineer available on any session.</p>
+  </div>
+
+  <div class="svc">
+    <article class="card reveal">
+      <span class="n">01 &nbsp;/&nbsp; Music</span>
+      <h3>Recording &amp; mixing</h3>
+      <p>Treated control room and an isolated vocal booth, built for tracking vocals
+        that need no apology in the mix.</p>
+      <ul>
+        <li>Vocal tracking and comping</li>
+        <li>Mixing and mastering</li>
+        <li>Beat production and arrangement</li>
+        <li>Groove Tubes GT66 tube condenser</li>
+        <li>Engineer on the session</li>
+      </ul>
+    </article>
+
+    <article class="card reveal" style="--d:90ms">
+      <span class="n">02 &nbsp;/&nbsp; Video</span>
+      <h3>Podcast &amp; video production</h3>
+      <p>A three-camera set with lighting, boom mics and backdrops already standing.
+        Walk in, sit down, record.</p>
+      <ul>
+        <li>Three-camera multi-angle shoot</li>
+        <li>Four-seat set with boom mics</li>
+        <li>Three seamless backdrop rolls</li>
+        <li>Ring and stand lighting</li>
+        <li>Confidence monitor for the talent</li>
+      </ul>
+    </article>
+
+    <article class="card reveal" style="--d:180ms">
+      <span class="n">03 &nbsp;/&nbsp; Media</span>
+      <h3>24/7 Entertainment interviews</h3>
+      <p>A branded step-and-repeat wall, director's chairs and a lounge that looks
+        like somewhere people want to be photographed.</p>
+      <ul>
+        <li>Branded interview backdrop</li>
+        <li>Press and red-carpet style sit-downs</li>
+        <li>Social clips and content days</li>
+        <li>Photo shoots and cover art</li>
+        <li>Stocked cooler, kitchen and lounge</li>
+      </ul>
+    </article>
+  </div>
+</div>
+</section>
+
+<!-- ============ STUDIO GALLERY ============ -->
+<section id="studio">
+<div class="wrap">
+  <div class="head reveal">
+    <h2>Four rooms,<br>one door.</h2>
+    <p>Every photo is this room, on a normal day. Tap any of them to see it full size.</p>
+  </div>
+
+  <!-- zone 1 -->
+  <div class="zone reveal">
+    <div class="zone-head">
+      <h3>Podcast &amp; video set</h3>
+      <p>Three cameras, four seats, lighting already up.</p>
+    </div>
+    <div class="grid two">
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-podcast-video-camera-ring-light-setup-800.jpg"
+             srcset="assets/photos/the-carter-studios-podcast-video-camera-ring-light-setup-800.jpg 800w,
+                     assets/photos/the-carter-studios-podcast-video-camera-ring-light-setup-1600.jpg 1600w"
+             sizes="(min-width:760px) 46vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Behind-the-scenes view at The Carter Studios showing a Canon video camcorder on a tripod and a purple LED ring light aimed at the leather podcast couches, microphones, and Good Vibes Only neon backdrop."
+             data-cap="Camera and ring light on the podcast set">
+        <figcaption>Camera &amp; lighting</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-multi-camera-podcast-production-rig-800.jpg"
+             srcset="assets/photos/the-carter-studios-multi-camera-podcast-production-rig-800.jpg 800w,
+                     assets/photos/the-carter-studios-multi-camera-podcast-production-rig-1600.jpg 1600w"
+             sizes="(min-width:760px) 46vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Reverse angle of the podcast studio at The Carter Studios showing three Canon cameras mounted on tripods for multi-angle switching, studio stand lighting, an overhead Samsung confidence monitor, and acoustic wall treatment."
+             data-cap="Three-camera multi-angle rig">
+        <figcaption>Three-camera rig</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- zone 2 -->
+  <div class="zone reveal">
+    <div class="zone-head">
+      <h3>Control room &amp; vocal booth</h3>
+      <p>Treated walls, outboard rack, and a booth with a real tube mic in it.</p>
+    </div>
+    <div class="grid">
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-music-production-control-room-wide-800.jpg"
+             srcset="assets/photos/the-carter-studios-music-production-control-room-wide-800.jpg 800w,
+                     assets/photos/the-carter-studios-music-production-control-room-wide-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Wide view of the acoustically treated music production control room at The Carter Studios featuring an iMac DAW workstation, Yamaha HS and white KRK Rokit studio monitors, Akai MPK and 88-key MIDI keyboards, outboard gear rack, overhead TV, and vocal booth window."
+             data-cap="Music production and mixing control room">
+        <figcaption>Control room</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-control-room-vocal-booth-and-client-lounge-800.jpg"
+             srcset="assets/photos/the-carter-studios-control-room-vocal-booth-and-client-lounge-800.jpg 800w,
+                     assets/photos/the-carter-studios-control-room-vocal-booth-and-client-lounge-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Angle of the recording control room at The Carter Studios showing the mixing desk, outboard rack, glass window into the vocal booth, soundproof booth door, black leather artist couch, and brass instruments on stands."
+             data-cap="Control room, booth window and artist couch">
+        <figcaption>Booth window</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-outboard-audio-gear-rack-and-mixing-desk-800.jpg"
+             srcset="assets/photos/the-carter-studios-outboard-audio-gear-rack-and-mixing-desk-800.jpg 800w,
+                     assets/photos/the-carter-studios-outboard-audio-gear-rack-and-mixing-desk-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Close-up side angle of the outboard audio hardware rack at The Carter Studios featuring a DOD 231Q dual 31-band graphic equalizer, Tascam rack interface, multi-channel processors, studio headphones, and MIDI keyboards in the background."
+             data-cap="Outboard rack and mixing desk">
+        <figcaption>Outboard rack</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-vocal-isolation-booth-microphone-window-800.jpg"
+             srcset="assets/photos/the-carter-studios-vocal-isolation-booth-microphone-window-800.jpg 800w,
+                     assets/photos/the-carter-studios-vocal-isolation-booth-microphone-window-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Inside the soundproof vocal isolation booth at The Carter Studios showing a Groove Tubes GT66 condenser microphone with shock mount, pop filter, and studio headphones next to the control room window."
+             data-cap="Soundproof vocal isolation booth">
+        <figcaption>Vocal booth</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-vocal-booth-tube-condenser-mic-closeup-800.jpg"
+             srcset="assets/photos/the-carter-studios-vocal-booth-tube-condenser-mic-closeup-800.jpg 800w,
+                     assets/photos/the-carter-studios-vocal-booth-tube-condenser-mic-closeup-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Close-up of the Groove Tubes GT66 vacuum tube condenser microphone, shock mount, pop filter, and tracking headphones inside the acoustic foam vocal booth at The Carter Studios."
+             data-cap="Groove Tubes GT66 tube condenser microphone">
+        <figcaption>The GT66</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-work-harder-motivational-money-wall-art-800.jpg"
+             srcset="assets/photos/the-carter-studios-work-harder-motivational-money-wall-art-800.jpg 800w,
+                     assets/photos/the-carter-studios-work-harder-motivational-money-wall-art-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Pop-art canvas wall print at The Carter Studios reading 'IF YOU CAN STILL COUNT YOUR MONEY, WORK HARDER.' over colorful stacks of hundred-dollar bills."
+             data-cap="House rules, on the wall">
+        <figcaption>House rules</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- zone 3 -->
+  <div class="zone reveal">
+    <div class="zone-head">
+      <h3>24/7 Entertainment lounge</h3>
+      <p>Branded interview wall, director's chairs, stocked cooler.</p>
+    </div>
+    <div class="grid">
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-247-entertainment-interview-set-and-studio-entry-800.jpg"
+             srcset="assets/photos/the-carter-studios-247-entertainment-interview-set-and-studio-entry-800.jpg 800w,
+                     assets/photos/the-carter-studios-247-entertainment-interview-set-and-studio-entry-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Wide view of the Tha Carter Studios 24/7 Entertainment branded wall banner with two black director chairs, stocked Red Bull cooler, blue lounge seating, wall-mounted TV, and open doorway into the acoustic recording studio."
+             data-cap="24/7 Entertainment interview set and studio entry">
+        <figcaption>Interview set</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-media-lounge-tv-and-247-interview-backdrop-800.jpg"
+             srcset="assets/photos/the-carter-studios-media-lounge-tv-and-247-interview-backdrop-800.jpg 800w,
+                     assets/photos/the-carter-studios-media-lounge-tv-and-247-interview-backdrop-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Media lounge at The Carter Studios featuring the Tha Carter Studios 24/7 Entertainment wall banner, two black director chairs, a stocked Red Bull cooler, a large wall-mounted TV playing classic hip-hop video, geometric wall decor, and a blue tufted accent chair."
+             data-cap="Media lounge and 24/7 Entertainment backdrop">
+        <figcaption>Media lounge</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-creative-lounge-overview-from-counter-800.jpg"
+             srcset="assets/photos/the-carter-studios-creative-lounge-overview-from-counter-800.jpg 800w,
+                     assets/photos/the-carter-studios-creative-lounge-overview-from-counter-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Overview from the granite kitchen counter looking into The Carter Studios lounge with a smartphone gimbal on the counter, ring light, tabletop microphones on the coffee table, Red Bull cooler, and 24/7 Entertainment backdrop."
+             data-cap="Creative lounge and mobile content setup">
+        <figcaption>Creative lounge</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-lounge-blue-tufted-accent-chair-seating-800.jpg"
+             srcset="assets/photos/the-carter-studios-lounge-blue-tufted-accent-chair-seating-800.jpg 800w,
+                     assets/photos/the-carter-studios-lounge-blue-tufted-accent-chair-seating-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Close-up of the blue button-tufted nailhead accent armchair, decorative metal side table, and colorful patchwork chair in the lounge at The Carter Studios."
+             data-cap="Lounge accent seating">
+        <figcaption>Lounge seating</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- zone 4 -->
+  <div class="zone reveal">
+    <div class="zone-head">
+      <h3>Kitchen &amp; comfort</h3>
+      <p>A full kitchen and a private restroom, because sessions run long.</p>
+    </div>
+    <div class="grid">
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-client-kitchenette-and-hospitality-lounge-wide-800.jpg"
+             srcset="assets/photos/the-carter-studios-client-kitchenette-and-hospitality-lounge-wide-800.jpg 800w,
+                     assets/photos/the-carter-studios-client-kitchenette-and-hospitality-lounge-wide-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Wide view of the full kitchenette and hospitality area at The Carter Studios featuring a teal lounge sofa, granite breakfast bar, Keurig coffee station, stainless steel refrigerator, gas stove, microwave, white shaker cabinets, and purple LED ring light."
+             data-cap="Client kitchenette and hospitality lounge">
+        <figcaption>Kitchen &amp; bar</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-full-kitchen-coffee-bar-and-appliances-800.jpg"
+             srcset="assets/photos/the-carter-studios-full-kitchen-coffee-bar-and-appliances-800.jpg 800w,
+                     assets/photos/the-carter-studios-full-kitchen-coffee-bar-and-appliances-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Closer angle of the kitchen at The Carter Studios showing the granite countertop, chrome swivel barstool, Keurig coffee station, stainless steel refrigerator, gas range, microwave, and sink."
+             data-cap="Kitchen, coffee station and granite bar">
+        <figcaption>Coffee station</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="assets/photos/the-carter-studios-private-client-restroom-interior-800.jpg"
+             srcset="assets/photos/the-carter-studios-private-client-restroom-interior-800.jpg 800w,
+                     assets/photos/the-carter-studios-private-client-restroom-interior-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1600" height="1200" loading="lazy" data-lb
+             alt="Clean modern private restroom at The Carter Studios featuring marble-tiled walls, gray vanity cabinet with marble sink top, framed mirror, touchless automatic hand dryer, and full-length mirror."
+             data-cap="Private client restroom">
+        <figcaption>Private restroom</figcaption>
+      </figure>
+      <figure class="shot tall">
+        <img src="assets/photos/the-carter-studios-restroom-door-signage-800.jpg"
+             srcset="assets/photos/the-carter-studios-restroom-door-signage-800.jpg 800w,
+                     assets/photos/the-carter-studios-restroom-door-signage-1600.jpg 1600w"
+             sizes="(min-width:760px) 30vw, 48vw" width="1200" height="1600" loading="lazy" data-lb
+             alt="White paneled door with a black and white Restroom sign at The Carter Studios."
+             data-cap="Restroom entrance">
+        <figcaption>Signage</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <figure class="band reveal">
+    <img src="assets/photos/the-carter-studios-podcast-set-main-wide-view-1600.jpg"
+         width="1600" height="1200" loading="lazy" data-lb
+         alt="Wide view of the main podcasting set at The Carter Studios with leather couches, boom microphones and the Good Vibes Only neon sign."
+         data-cap="Main video podcasting set">
+    <figcaption><small>Open around the clock</small>Bring the idea. The room is already set.</figcaption>
+  </figure>
+</div>
+</section>
+
+<!-- ============ RATES ============ -->
+<section id="rates">
+<div class="wrap">
+  <div class="head reveal">
+    <h2>What it<br>costs.</h2>
+    <p>Build the session and see roughly where it lands. Confirmed when you book.</p>
+  </div>
+
+  <div class="estnote reveal">
+    <div><b>Estimate only</b>
+      These figures are a starting point for planning, not a quote. Call or text for the real
+      number on your session, including anything the estimator does not cover.</div>
+  </div>
+
+  <div class="rates">
+    <div class="calc reveal">
+      <div class="field">
+        <span class="lbl">Which room</span>
+        <div class="seg" id="segRoom">
+          <button type="button" aria-pressed="true" data-rate="65">Control Room</button>
+          <button type="button" aria-pressed="false" data-rate="45">Vocal Booth</button>
+          <button type="button" aria-pressed="false" data-rate="95">Podcast Studio</button>
+        </div>
+      </div>
+      <div class="field">
+        <span class="lbl">How long</span>
+        <input type="range" id="hrs" min="2" max="12" step="1" value="4"
+               aria-label="Session length in hours">
+        <div class="hrs"><span>2 hr minimum</span><span><b id="hrsVal">4</b> hours</span><span>12 hr</span></div>
+      </div>
+      <div class="field">
+        <span class="lbl">Add to it</span>
+        <div class="seg" id="segAdd">
+          <button type="button" aria-pressed="true" data-add="0" data-name="Engineer on the session">Engineer</button>
+          <button type="button" aria-pressed="false" data-add="150" data-name="Mix &amp; master">Mix &amp; master</button>
+          <button type="button" aria-pressed="false" data-add="200" data-name="Multi-camera video">Video</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="total reveal">
+      <span class="lbl">Estimated</span>
+      <p class="amount" id="amount">$260</p>
+      <p class="sub" id="subline">Control Room · 4 hours</p>
+      <ul class="lines" id="lines"></ul>
+      <a class="btn" href="#book">Hold this slot</a>
+      <p class="fine">Sessions over 8 hours take 10% off the room. Deposit holds the date.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ============ BOOK ============ -->
+<section id="book">
+<div class="wrap">
+  <div class="head reveal">
+    <h2>Hold<br>the room.</h2>
+    <p>Fastest way in is a phone call. The form opens your mail app with the details filled in.</p>
+  </div>
+
+  <div class="book">
+    <form id="bookForm" novalidate class="reveal">
+      <div class="two">
+        <div class="field">
+          <label for="n">Your name</label>
+          <input type="text" id="n" name="name" placeholder="Who's booking" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="p">Phone</label>
+          <input type="tel" id="p" name="phone" placeholder="Best number to reach you" autocomplete="tel">
+        </div>
+      </div>
+      <div class="two">
+        <div class="field">
+          <label for="e">Email</label>
+          <input type="email" id="e" name="email" placeholder="you@email.com" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="d">Date you want</label>
+          <input type="date" id="d" name="date">
+        </div>
+      </div>
+      <div class="field">
+        <label for="r">What you need</label>
+        <select id="r" name="room">
+          <option>Music recording or mixing</option>
+          <option>Podcast or video shoot</option>
+          <option>Interview or press</option>
+          <option>Photo shoot or content day</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="m">Tell us about the session</label>
+        <textarea id="m" name="message" placeholder="Tracking four songs, need an engineer. Two guests on the podcast. Whatever it is."></textarea>
+      </div>
+      <button class="btn" type="submit">Send booking request</button>
+    </form>
+
+    <div class="sent" id="sent">
+      <div class="tick">&check;</div>
+      <h3>Your mail app is open</h3>
+      <p>Hit send in there and it comes straight to the studio. If nothing opened,
+        call or text <a href="tel:+16462002089">646&nbsp;200&nbsp;2089</a>.</p>
+    </div>
+
+    <div class="plate reveal">
+      <h3>Sean Carter</h3>
+      <p class="role">Bookings</p>
+      <ul class="rows">
+        <li><span>Phone</span><a href="tel:+16462002089">646&nbsp;200&nbsp;2089</a></li>
+        <li><span>Email</span><a href="mailto:thacarterstudios@gmail.com">thacarterstudios@gmail.com</a></li>
+        <li><span>Instagram</span><a href="https://www.instagram.com/thacarterstudios/" rel="noopener">@thacarterstudios</a></li>
+        <li><span>Where</span>Newark, New Jersey. Address confirmed when you book.</li>
+        <li><span>Hours</span>Around the clock, by appointment.</li>
+      </ul>
+      <div class="acts">
+        <a class="btn" href="tel:+16462002089">Call</a>
+        <a class="btn ghost" href="sms:+16462002089">Text</a>
+        <a class="btn ghost" href="mailto:thacarterstudios@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="wrap">
+  <div class="foot">
+    <img src="assets/brand/tha-carter-monogram-gold-on-ink.svg" alt="Tha Carter Studios" width="74" height="74">
+    <div>
+      <p style="margin:0 0 4px;font-family:'Carter Black',serif;font-size:20px;color:var(--brass)">Tha Carter Studios</p>
+      <p style="margin:0;color:var(--mute);font-size:14.5px">Recording · Podcast · Video<br>Newark, New Jersey</p>
+    </div>
+    <ul class="fl">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#studio">The Studio</a></li>
+      <li><a href="#rates">Rates</a></li>
+      <li><a href="#book">Book</a></li>
+      <li><a href="https://www.instagram.com/thacarterstudios/" rel="noopener">Instagram</a></li>
+      <li><a href="qr/">Share card</a></li>
+    </ul>
+  </div>
+  <div class="legal">
+    <span>&copy; <span id="yr">2026</span> Tha Carter Studios &nbsp;·&nbsp; 24/7 Entertainment &nbsp;·&nbsp; By appointment</span>
+    <span>Site by <a href="https://1stfloorproductions.github.io/" rel="noopener">First Floor Productions</a></span>
+  </div>
+</div>
+</footer>
+
+<!-- lightbox -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Studio photo">
+  <span class="count" id="lbCount"></span>
+  <button class="x" id="lbX" aria-label="Close">&times;</button>
+  <button class="nav-b prev" id="lbPrev" aria-label="Previous photo">&#8249;</button>
+  <button class="nav-b next" id="lbNext" aria-label="Next photo">&#8250;</button>
+  <div><img id="lbImg" src="" alt=""><p id="lbCap"></p></div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "additionalType": "https://schema.org/RecordingStudio",
+  "name": "Tha Carter Studios",
+  "alternateName": "The Carter Studios",
+  "description": "Recording, podcast and video studio in Newark, New Jersey. Music control room, soundproof vocal booth, three-camera podcast set and a 24/7 Entertainment interview lounge.",
+  "url": "https://1stfloorproductions.github.io/thacarterstudios/",
+  "image": "https://1stfloorproductions.github.io/thacarterstudios/assets/og.jpg",
+  "telephone": "+1-646-200-2089",
+  "email": "thacarterstudios@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Newark",
+    "addressRegion": "NJ",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "sameAs": ["https://www.instagram.com/thacarterstudios/"],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Music recording and mixing" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Video podcast production" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interview and media production" } }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "name": "Sean Carter",
+    "contactType": "Bookings",
+    "telephone": "+1-646-200-2089",
+    "email": "thacarterstudios@gmail.com"
+  }
+}
+</script>
+
+<script>
+(function(){
+"use strict";
+var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* ---- live dial ---- */
+var sweep = document.getElementById("sweep"), ct = document.getElementById("clockTime");
+function tick(){
+  var d = new Date();
+  var h = d.getHours(), m = d.getMinutes(), ap = h < 12 ? "AM" : "PM";
+  var h12 = h % 12; if (h12 === 0) h12 = 12;
+  ct.textContent = h12 + ":" + String(m).padStart(2,"0") + " " + ap;
+  if (sweep) sweep.style.transform = "rotate(" + (d.getSeconds() * 6) + "deg)";
+}
+tick(); setInterval(tick, 1000);
+
+/* ---- scroll reveal (enhancement only) ---- */
+var rv = document.querySelectorAll(".reveal");
+if ("IntersectionObserver" in window && !reduce) {
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: .08, rootMargin: "0px 0px -40px" });
+  rv.forEach(function(el){ io.observe(el); });
+} else {
+  rv.forEach(function(el){ el.classList.add("in"); });
+}
+
+/* ---- lightbox with next/prev across every photo on the page ---- */
+var shots = [].slice.call(document.querySelectorAll("img[data-lb]"));
+var lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg"),
+    lbCap = document.getElementById("lbCap"), lbCount = document.getElementById("lbCount"),
+    at = 0, lastFocus = null;
+
+function show(i){
+  at = (i + shots.length) % shots.length;
+  var im = shots[at];
+  // prefer the 1600px version in the lightbox
+  var big = (im.getAttribute("srcset") || "").split(",")
+              .map(function(s){ return s.trim().split(/\s+/)[0]; })
+              .filter(function(u){ return /-1600\.jpg$/.test(u); })[0];
+  lbImg.src = big || im.currentSrc || im.src;
+  lbImg.alt = im.alt;
+  lbCap.textContent = im.dataset.cap || im.alt;
+  lbCount.textContent = (at + 1) + " / " + shots.length;
+}
+function openLB(i){
+  lastFocus = document.activeElement;
+  show(i);
+  lb.classList.add("on");
+  document.body.style.overflow = "hidden";
+  document.getElementById("lbX").focus();
+}
+function closeLB(){
+  lb.classList.remove("on");
+  document.body.style.overflow = "";
+  lbImg.src = "";
+  if (lastFocus) lastFocus.focus();
+}
+shots.forEach(function(im, i){
+  im.addEventListener("click", function(){ openLB(i); });
+});
+document.getElementById("lbX").addEventListener("click", closeLB);
+document.getElementById("lbPrev").addEventListener("click", function(){ show(at - 1); });
+document.getElementById("lbNext").addEventListener("click", function(){ show(at + 1); });
+lb.addEventListener("click", function(e){ if (e.target === lb) closeLB(); });
+document.addEventListener("keydown", function(e){
+  if (!lb.classList.contains("on")) return;
+  if (e.key === "Escape") closeLB();
+  else if (e.key === "ArrowLeft") show(at - 1);
+  else if (e.key === "ArrowRight") show(at + 1);
+});
+
+/* ---- session estimator ---- */
+var rate = 65, hours = 4, addOn = 0, addName = "Engineer on the session",
+    roomName = "Control Room";
+function seg(id, fn){
+  var box = document.getElementById(id);
+  box.addEventListener("click", function(ev){
+    var b = ev.target.closest("button"); if (!b) return;
+    box.querySelectorAll("button").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+    b.setAttribute("aria-pressed","true"); fn(b); render();
+  });
+}
+seg("segRoom", function(b){ rate = +b.dataset.rate; roomName = b.textContent.trim(); });
+seg("segAdd",  function(b){ addOn = +b.dataset.add; addName = b.dataset.name; });
+document.getElementById("hrs").addEventListener("input", function(e){
+  hours = +e.target.value; document.getElementById("hrsVal").textContent = hours; render();
+});
+function render(){
+  var room = rate * hours;
+  var disc = hours >= 8 ? Math.round(room * .10) : 0;
+  var total = room + addOn - disc;
+  document.getElementById("amount").textContent = "$" + total.toLocaleString();
+  document.getElementById("subline").textContent = roomName + " · " + hours + " hours";
+  var li = "<li>" + roomName + " · " + hours + " hr <b>$" + room.toLocaleString() + "</b></li>";
+  li += "<li>" + addName + " <b>" + (addOn ? "$" + addOn.toLocaleString() : "included") + "</b></li>";
+  if (disc) li += "<li>Day-rate discount <b>&minus;$" + disc.toLocaleString() + "</b></li>";
+  document.getElementById("lines").innerHTML = li;
+}
+render();
+
+/* ---- booking: hand the details to the visitor's mail app ----
+   No back end on this host, so nothing can be posted anywhere. Composing a
+   message the visitor sends themselves means a request can never silently vanish. */
+var f = document.getElementById("bookForm");
+f.addEventListener("submit", function(ev){
+  ev.preventDefault();
+  var g = function(id){ return (document.getElementById(id).value || "").trim(); };
+  var name = g("n"), email = g("e");
+  if (!name || !email) { (name ? document.getElementById("e") : document.getElementById("n")).focus(); return; }
+
+  var body = [
+    "Name: " + name,
+    "Phone: " + (g("p") || "not given"),
+    "Email: " + email,
+    "What they need: " + document.getElementById("r").value,
+    "Date wanted: " + (g("d") || "flexible"),
+    "",
+    "Details:",
+    g("m") || "(none)",
+    "",
+    "Estimate shown on the site: " + document.getElementById("amount").textContent +
+      " (" + document.getElementById("subline").textContent + ")",
+    "Sent from the Tha Carter Studios website booking form"
+  ].join("\n");
+
+  var href = "mailto:thacarterstudios@gmail.com" +
+             "?subject=" + encodeURIComponent("Booking request - " + name) +
+             "&body=" + encodeURIComponent(body);
+  f.classList.add("hide");
+  document.getElementById("sent").classList.add("on");
+  window.location.href = href;
+});
+})();
+</script>
+</body>
+</html>
