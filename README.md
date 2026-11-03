@@ -45,7 +45,7 @@ rates and add-on prices; they were removed on 2026-11-02 because the site is liv
 ### Changing the contact details
 Sean's phone and email appear in: the nav button, the contact plate, the booking mailto,
 the footer, the JSON-LD block at the bottom, and the QR codes in `qr/index.html`.
-Search for `6462002089` and `thacarterstudios@gmail.com` to catch them all.
+Search for `8004490306` and `thacarterstudios@gmail.com` to catch them all.
 
 ## The booking form
 

@@ -180,9 +180,11 @@ body.zoom .hint{display:block}
 const QR = {
   "site":  {"n":33,"label":"Website","sub":"1stfloorproductions.github.io/thacarterstudios","url":"https://1stfloorproductions.github.io/thacarterstudios/","d":"feee263fc14369506eb5878bb74859a5dbabdd02ec108d6d07faaaaafe001b37009feac8cb8496898706e74bfbe78ca9026eac43920ee2913a9008944081897541a563990bbc24f0dc35d2cd44f5a71d600df3bd1a095f62f3886268b984b76a4695a7f3c619fc8058f1c5bfb6f4ea905aef31dbaa8c3f9dd7e5c2aee89c7e6f045c20fffed9d9980"},
   "ig":    {"n":33,"label":"Instagram","sub":"instagram.com/thacarterstudios","url":"https://www.instagram.com/thacarterstudios/","d":"fe433b3fc118a7d06e82b26bb744a885dba24d62ec17935907faaaaafe0064bd00969f94d05e704578d69815aea2076b3db53c901e58e2ce394d4b20bdec004eed42daea5fad7a26438a0ef8aa80eea1ae9a17b68e3d0184fdf32f8d252882eba14a089b0754fc00580d46ff9e032bd05111110ba4792fddd78aed4ae8900f33047bc9c0fed6a4e90"},
-  "call":  {"n":25,"label":"Call","sub":"646 200 2089","url":"tel:+16462002089","d":"fe91bfc171906e93cbb75905dba4c2ec119107faaafe014c00b75725a6542101a690042ed462380bb88fa95d89aa45321a693ed0fa0066c4ffa62af059112ba3cfc5d67deeeb70b5040234fe8b338"},
+  "call":  {"n":25,"label":"Call","sub":"1-800-449-0306","url":"tel:+18004490306","d":"fee1bfc145906e89cbb75f05dba742ec115507faaafe01bf00b70625d200213cb4820896d260631bb946a95d2929456a98492e90fa0066c4ffa62af059112ba1cfc5d579eeebf0b5040264fecb6b8"}
+,
   "email": {"n":29,"label":"Email","sub":"thacarterstudios@gmail.com","url":"mailto:thacarterstudios@gmail.com","d":"fea99bfc1418106e9fcabb75a125dba0c52ec1310d07faaaafe01ac900b746e25c4e8ddfe28aca0cc02e7038608407969e0b37df48ff701fb19863f1258263e849249068780363ca65b5dffb00677c5ffb936a505b3513ba7b4ff5d53caf6eaead5304a179afed71b90"},
-  "card":  {"n":49,"label":"Save contact","sub":"Sean Carter · save to phone","url":"MECARD:N:Carter,Sean;TEL:6462002089;EMAIL:thacarterstudios@gmail.com;URL:https://1stfloorproductions.github.io/thacarterstudios/;NOTE:Tha Carter Studios / 24-7 Entertainment, Newark NJ;;","d":"fe914c6750bfc16afda2c1d06ebb947d3a6bb75d0b8d2ea5dba500bf7842ec1475b14b5107faaaaaaaaafe00e6b4631a00ce4ae7e2af97bc74a4df69b41efc881f9adadb87ca7e99b35537632948fac9e938673c53b51ec55abc459073f0660138554282a396ebcaf2a4a75f29989ec1f0408dbf00284972b9b37e6d073f6cae9342f96fb85b647f87dfaa43e0b187f46853146ac2b2b09cabb46e8719e94603fa4afd9bff87399d3cb9c4dfabef271eed72af90573e3ad6ee98ab2fde29096e786970442eaaa473d8b7200a8ce34d4532dfe00207f71017532c054c4ef18f532ccf02257a54f631651e94d17b9e58e2235969b8e7e353bff4befa006ca51be5c73f8a03aaa9ab1052b4c401b1ebacff7f6ccffdd298517676dae97348699b5f059b04017b16fe83ed529af78"}
+  "card":  {"n":49,"label":"Save contact","sub":"Sean Carter · save to phone","url":"MECARD:N:Carter,Sean;TEL:8004490306;EMAIL:thacarterstudios@gmail.com;URL:https://1stfloorproductions.github.io/thacarterstudios/;NOTE:Tha Carter Studios / 24-7 Entertainment, Newark NJ;;","d":"fea14c6750bfc16afda2c1d06ebb947d3a6bb75d0b8d22a5dba500bf78c2ec1475b14b5107faaaaaaaaafe0066b4631a00ce32e7e2af97fc68a4df69b416f8881f9adadc24ca7e9db35527632948fac98d38673cd3b60bc55abc659073b066013855b2e2a396ebcab2aca75f299896c3f0408dbf04b84972b5b37ea5073f6aae934ef96fb85b677e07dfaa03e13107f46853146a92b2b09cab847e8719e9460bfa4afd9bff81999d3cb9c4dfabef271eed72af90573e7ad5ef98ab2f9e2909ae786970449b92a473d8b73e668ce34d4536d9e00207f71497532c054c4ef18f532ccf02257a54f671651f94d17bde58e2a35969b8e7e2b3bff4befa005ca51be5c73f8a03aaa9ab1052b4c40171ebacff7f6ceffdd298517676dae8734869db5f059b04017b16fea3ed529af78"}
+
 };
 
 const qrSvg=document.getElementById('qr'),qrPath=document.getElementById('qrpath'),
@@ -251,7 +253,7 @@ document.addEventListener('visibilitychange',hold);
 document.getElementById('share').addEventListener('click',async()=>{
   const btn=document.getElementById('share');
   if(current==='card'){ location.href='mailto:thacarterstudios@gmail.com'; return; }
-  if(current==='call'){ location.href='tel:+16462002089'; return; }
+  if(current==='call'){ location.href='tel:+18004490306'; return; }
   const url=QR[current].url;
   try{
     if(navigator.share){ await navigator.share({title:'Tha Carter Studios',url}); }
