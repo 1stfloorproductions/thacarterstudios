@@ -1,4 +1,4 @@
-const CACHE = 'carter-qr-v1';
+const CACHE = 'carter-qr-v2';
 const SHELL = [
   './', './index.html', './manifest.webmanifest',
   './icon-180.png', './icon-192.png', './icon-512.png',
@@ -18,16 +18,45 @@ self.addEventListener('activate', e => {
   );
 });
 
-// Cache-first for this folder only; everything else goes straight to the network.
+/* This page carries a phone number, so a stale copy is worse than no copy.
+
+   The first build was cache-first for everything. That meant once the page was
+   installed it was frozen: the studio's number changed and every installed copy
+   kept showing the old one, because the cache always answered first and the
+   network was never asked.
+
+   So the document now goes to the network first and only falls back to the
+   cache when there is no signal. Icons and fonts never change, so those stay
+   cache-first, which is what keeps it fast and usable offline. */
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
-  const mine = url.origin === location.origin && url.pathname.startsWith(new URL('./', location).pathname);
+  const mine = url.origin === location.origin &&
+               url.pathname.startsWith(new URL('./', location).pathname);
   if (e.request.method !== 'GET' || !mine) return;
+
+  const isDoc = e.request.mode === 'navigate' || e.request.destination === 'document';
+
+  if (isDoc) {
+    e.respondWith(
+      fetch(e.request).then(res => {
+        const copy = res.clone();
+        caches.open(CACHE).then(c => c.put(e.request, copy)).catch(() => {});
+        return res;
+      }).catch(() =>
+        caches.match(e.request, { ignoreSearch: true })
+          .then(hit => hit || caches.match('./index.html'))
+      )
+    );
+    return;
+  }
+
   e.respondWith(
-    caches.match(e.request, { ignoreSearch: true }).then(hit => hit || fetch(e.request).then(res => {
-      const copy = res.clone();
-      caches.open(CACHE).then(c => c.put(e.request, copy)).catch(() => {});
-      return res;
-    }).catch(() => caches.match('./index.html')))
+    caches.match(e.request, { ignoreSearch: true }).then(hit => hit ||
+      fetch(e.request).then(res => {
+        const copy = res.clone();
+        caches.open(CACHE).then(c => c.put(e.request, copy)).catch(() => {});
+        return res;
+      })
+    )
   );
 });
