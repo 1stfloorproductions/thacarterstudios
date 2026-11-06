@@ -12,6 +12,7 @@
 <link rel="apple-touch-icon" href="../assets/brand/tha-carter-monogram-gold-on-ink.svg">
 <style>
 @font-face{font-family:"Carter Caps";src:url("../assets/fonts/carter-caps.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Carter Black";src:url("../assets/fonts/carter-black.woff2") format("woff2");font-display:swap}
 
 :root{
   --night:#0B0A08; --ink:#14110D; --panel:#131109; --panel2:#1A1610;
@@ -24,10 +25,8 @@
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;background:var(--night);color:var(--bone);font-family:var(--body);
-  line-height:1.6;-webkit-font-smoothing:antialiased;
-}
+body{margin:0;background:var(--night);color:var(--bone);font-family:var(--body);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:var(--brass);text-decoration:none}
 a:hover{color:var(--brass-lt);text-decoration:underline}
 :focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:3px}
@@ -37,13 +36,13 @@ a:hover{color:var(--brass-lt);text-decoration:underline}
 header{border-bottom:1px solid var(--line);background:var(--ink)}
 .bar{display:flex;align-items:center;gap:14px;padding:16px 0}
 .bar img{width:38px;height:38px;display:block}
-.bar .name{font-family:var(--caps);letter-spacing:.06em;font-size:15px;text-transform:uppercase;color:var(--bone)}
+.bar .name{font-family:var(--caps);letter-spacing:.06em;font-size:15px;text-transform:uppercase}
 .bar .back{margin-left:auto;font-size:14px;color:var(--mute)}
 .bar .back:hover{color:var(--brass)}
 
 .hero{padding:clamp(30px,7vw,58px) 0 10px}
 .eyebrow{font-family:var(--caps);text-transform:uppercase;letter-spacing:.18em;font-size:11px;color:var(--brass-dk);margin:0 0 12px}
-h1{font-family:var(--caps);font-size:clamp(30px,7vw,46px);line-height:1.08;margin:0 0 16px;letter-spacing:.01em}
+h1{font-family:var(--caps);font-size:clamp(30px,7vw,46px);line-height:1.08;margin:0 0 16px}
 .lede{font-size:clamp(16px,2.4vw,18px);color:#d8d2c4;margin:0 0 6px;max-width:62ch}
 
 section{padding:26px 0}
@@ -53,12 +52,9 @@ h2{font-family:var(--caps);text-transform:uppercase;letter-spacing:.12em;font-si
 
 ol.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:12px}
 ol.steps li{counter-increment:s;position:relative;padding-left:44px;color:#d8d2c4}
-ol.steps li::before{
-  content:counter(s);position:absolute;left:0;top:-1px;width:30px;height:30px;
-  display:grid;place-items:center;border-radius:50%;
-  background:var(--panel2);border:1px solid var(--line);
-  font-family:var(--caps);font-size:13px;color:var(--brass)
-}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:-1px;width:30px;height:30px;
+  display:grid;place-items:center;border-radius:50%;background:var(--panel2);
+  border:1px solid var(--line);font-family:var(--caps);font-size:13px;color:var(--brass)}
 ol.steps b{color:var(--bone);font-weight:600}
 
 ul.bring{list-style:none;margin:0;padding:0;display:grid;gap:10px}
@@ -69,26 +65,70 @@ ul.bring b{color:var(--bone);font-weight:600}
 .note{border-left:2px solid var(--brass-dk);padding:2px 0 2px 16px;margin:16px 0 0;color:var(--mute);font-size:14.5px}
 .warn{border-left-color:var(--ember)}
 
-.formbox{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px;min-height:220px}
-.formbox iframe{display:block;width:100%;border:0;border-radius:8px}
+/* ---------- form ---------- */
+form{background:var(--panel);border:1px solid rgba(245,241,232,.08);border-radius:14px;
+  padding:clamp(20px,3vw,32px)}
+form.hide{display:none}
+.field{margin-bottom:24px}
+.field:last-of-type{margin-bottom:0}
+label,.lbl{display:block;font-family:var(--caps);font-size:11.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--brass-dk);margin-bottom:11px}
+.hint{font-family:var(--body);font-size:13.5px;letter-spacing:0;text-transform:none;
+  color:var(--mute);margin:-5px 0 11px;line-height:1.5}
+.two{display:grid;gap:18px}
+@media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
+input[type=text],input[type=email],input[type=tel],input[type=date],input[type=time],
+input[type=number],select,textarea{width:100%;background:rgba(0,0,0,.3);
+  border:1px solid rgba(245,241,232,.14);border-radius:8px;padding:13px 14px;
+  color:var(--bone);font:inherit;font-size:15px}
+textarea{min-height:92px;resize:vertical}
+input::placeholder,textarea::placeholder{color:#6E6759}
+input:invalid,select:invalid{box-shadow:none}
 
-.pending{padding:26px 18px;text-align:center}
-.pending h3{font-family:var(--caps);text-transform:uppercase;letter-spacing:.1em;font-size:14px;color:var(--brass);margin:0 0 10px}
-.pending p{color:var(--mute);margin:0 auto 18px;max-width:46ch;font-size:15px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{font-family:var(--caps);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  padding:11px 15px;border-radius:7px;border:1px solid rgba(245,241,232,.14);background:none;
+  color:var(--mute);cursor:pointer;transition:all .18s ease}
+.seg button:hover{color:var(--bone);border-color:var(--line)}
+.seg button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);color:var(--ink)}
 
-.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.btn{
-  display:inline-block;padding:12px 20px;border-radius:999px;
-  background:var(--brass);color:#1b1407;font-weight:700;font-size:14.5px;
-  border:1px solid var(--brass);letter-spacing:.02em
-}
+.checks{display:grid;gap:13px;margin:0}
+.check{display:flex;gap:12px;align-items:flex-start;cursor:pointer}
+.check input{width:19px;height:19px;flex:0 0 auto;margin-top:2px;accent-color:var(--brass)}
+.check span{font-family:var(--body);font-size:14.5px;letter-spacing:0;text-transform:none;
+  color:#d8d2c4;line-height:1.5;font-weight:400}
+
+.idbox{background:var(--panel2);border:1px solid var(--line);border-radius:10px;
+  padding:16px 18px;margin:26px 0 0}
+.idbox .lbl{color:var(--brass);margin-bottom:8px}
+.idbox p{margin:0;font-size:14.5px;color:#d8d2c4}
+
+.err{color:var(--ember);font-size:14px;margin:14px 0 0;display:none}
+.err.on{display:block}
+
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;background:var(--brass);
+  color:#1b1407;font-weight:700;font-size:14.5px;border:1px solid var(--brass);
+  letter-spacing:.02em;cursor:pointer;font-family:var(--body)}
 .btn:hover{background:var(--brass-lt);color:#1b1407;text-decoration:none}
 .btn.ghost{background:transparent;color:var(--brass);border-color:var(--line)}
 .btn.ghost:hover{background:rgba(227,177,74,.08);color:var(--brass-lt)}
+form .btn{margin-top:22px;width:100%;text-align:center}
+
+.sent{display:none;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  text-align:center;padding:34px clamp(18px,4vw,30px)}
+.sent.on{display:block}
+.sent .tick{width:54px;height:54px;border-radius:50%;background:rgba(227,177,74,.14);
+  border:1px solid var(--brass);display:grid;place-items:center;margin:0 auto;
+  color:var(--brass);font-size:24px}
+.sent h3{font-family:"Carter Black",serif;font-weight:400;font-size:28px;margin:14px 0 10px}
+.sent p{color:#d8d2c4;margin:0 auto 14px;max-width:48ch}
+.sent .big{color:var(--brass);font-weight:700}
+.sent .acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
 
 footer{border-top:1px solid var(--line);margin-top:30px;padding:24px 0 40px;color:var(--mute);font-size:14px}
 footer .rows{display:grid;gap:7px;margin:0 0 16px;padding:0;list-style:none}
-footer .rows span{display:inline-block;min-width:74px;color:var(--brass-dk);font-size:12.5px;text-transform:uppercase;letter-spacing:.09em;font-family:var(--caps)}
+footer .rows span{display:inline-block;min-width:74px;color:var(--brass-dk);font-size:12.5px;
+  text-transform:uppercase;letter-spacing:.09em;font-family:var(--caps)}
 .fine{font-size:12.5px;color:#6f6a5e;margin:14px 0 0}
 </style>
 </head>
@@ -118,10 +158,10 @@ footer .rows span{display:inline-block;min-width:74px;color:var(--brass-dk);font
     <h2>How it works</h2>
     <div class="card">
       <ol class="steps">
-        <li><b>You send this form.</b> Your details, who is coming with you, your ID photo, your hours and what you are booking.</li>
-        <li><b>The studio confirms.</b> You get a reply with the address, the door code and the total for your hours at 45 dollars an hour.</li>
-        <li><b>You put a card on file.</b> The studio sends you a secure link from its payment processor. Nothing is charged for the booking itself and no money is frozen.</li>
-        <li><b>You show the ID at the door.</b> The name on it has to match the name on this form. Everyone you bring does the same.</li>
+        <li><b>You fill this in.</b> It opens an email to the studio with all your answers already written out.</li>
+        <li><b>You attach a photo of your ID</b> to that email, then send it. The studio cannot confirm a session without it.</li>
+        <li><b>The studio replies</b> with the address, the door code and the total for your hours at 45 dollars an hour.</li>
+        <li><b>You show the same ID at the door.</b> The name has to match. Everyone you bring does the same.</li>
       </ol>
     </div>
   </section>
@@ -130,7 +170,7 @@ footer .rows span{display:inline-block;min-width:74px;color:var(--brass-dk);font
     <h2>Have these ready</h2>
     <div class="card">
       <ul class="bring">
-        <li><b>Your ID.</b> A photo of the front of your driver license or state ID. The name has to match the name you put on the form.</li>
+        <li><b>A photo of your ID</b> already on your phone. Front of your driver license or state ID. The name has to match the name you put below.</li>
         <li><b>First and last name of everyone you are bringing.</b> Artists, engineers, friends, anyone walking in. Each adult brings their own ID.</li>
         <li><b>Your date and start time,</b> and roughly how many hours you want.</li>
         <li><b>What you are booking for.</b> Recording, podcast, video, mixing, mastering, photos, or a mix of them.</li>
@@ -143,18 +183,133 @@ footer .rows span{display:inline-block;min-width:74px;color:var(--brass-dk);font
   </section>
 
   <section id="form">
-    <h2>The form</h2>
-    <div class="formbox" id="formbox">
-      <div class="pending" id="pending">
-        <h3>The form is not connected yet</h3>
-        <p>
-          It goes live here as soon as the studio finishes setting it up.
-          In the meantime, call or email and the studio will take your details directly.
-        </p>
-        <div class="acts" style="justify-content:center">
-          <a class="btn" href="tel:+18004490306">Call 1 800 449 0306</a>
-          <a class="btn ghost" href="mailto:thacarterstudios@gmail.com?subject=Session%20details">Email the studio</a>
+    <h2>Your details</h2>
+
+    <form id="intakeForm">
+
+      <div class="field two">
+        <div>
+          <label for="name">Your full legal name</label>
+          <p class="hint">Exactly as it appears on your ID.</p>
+          <input type="text" id="name" autocomplete="name" placeholder="First and last" required>
         </div>
+        <div>
+          <label for="phone">Best number to reach you</label>
+          <p class="hint">In case the studio needs you quickly.</p>
+          <input type="tel" id="phone" autocomplete="tel" placeholder="Mobile" required>
+        </div>
+      </div>
+
+      <div class="field two">
+        <div>
+          <label for="email">Your email</label>
+          <input type="email" id="email" autocomplete="email" placeholder="you@email.com" required>
+        </div>
+        <div>
+          <label for="date">Date you want</label>
+          <input type="date" id="date" required>
+        </div>
+      </div>
+
+      <div class="field two">
+        <div>
+          <label for="time">Start time</label>
+          <input type="time" id="time" required>
+        </div>
+        <div>
+          <label for="hours">How many hours</label>
+          <p class="hint">45 dollars an hour, any room.</p>
+          <input type="number" id="hours" min="1" max="24" step="1" value="4" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="lbl">What are you booking for</span>
+        <p class="hint">Pick as many as apply.</p>
+        <div class="seg" id="services">
+          <button type="button" aria-pressed="false">Recording</button>
+          <button type="button" aria-pressed="false">Mixing</button>
+          <button type="button" aria-pressed="false">Mastering</button>
+          <button type="button" aria-pressed="false">Video podcast</button>
+          <button type="button" aria-pressed="false">Interview or media</button>
+          <button type="button" aria-pressed="false">Photos</button>
+          <button type="button" aria-pressed="false">Not sure yet</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="room">Which room</label>
+        <select id="room">
+          <option value="Not sure, you pick">Not sure, you pick</option>
+          <option>Control room</option>
+          <option>Vocal booth</option>
+          <option>Podcast set</option>
+          <option>Lounge</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="bringing">Is anyone coming with you</label>
+        <select id="bringing">
+          <option value="Just me">Just me</option>
+          <option value="Bringing people">Yes, I am bringing people</option>
+        </select>
+      </div>
+
+      <div class="field" id="guestField" hidden>
+        <label for="guests">Name everyone you are bringing</label>
+        <p class="hint">First and last name, one per line. Everyone walking in has to be
+          on this list, and each adult brings their own ID.</p>
+        <textarea id="guests" placeholder="Marcus Webb&#10;Dana Ruiz"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="total">How many people in total, including you</label>
+        <input type="number" id="total" min="1" max="30" step="1" value="1" required>
+      </div>
+
+      <div class="field">
+        <label for="notes">Anything we should know</label>
+        <p class="hint">What you are working on, gear you are bringing, anything else.</p>
+        <textarea id="notes" placeholder="Tracking four songs, need an engineer. Two guests on the podcast."></textarea>
+      </div>
+
+      <div class="field">
+        <span class="lbl">Before you send</span>
+        <div class="checks">
+          <label class="check"><input type="checkbox" id="a1" required>
+            <span>The name above matches the ID I am attaching, and I will show that ID at the door.</span></label>
+          <label class="check"><input type="checkbox" id="a2" required>
+            <span>Everyone I bring is named on this form, and each adult will show their own ID.</span></label>
+          <label class="check"><input type="checkbox" id="a3" required>
+            <span>I will put a card on file before the session. No money is held or frozen. It is only
+              charged for damage, missing equipment, or time past the hours I booked.</span></label>
+          <label class="check"><input type="checkbox" id="a4" required>
+            <span>My session time is paid separately at 45 dollars an hour.</span></label>
+        </div>
+      </div>
+
+      <div class="idbox">
+        <span class="lbl">One thing this form cannot do</span>
+        <p>It cannot attach your ID photo for you. When your email opens, <b>add a photo of
+          the front of your ID before you hit send.</b> Without it the studio cannot confirm
+          your session.</p>
+      </div>
+
+      <p class="err" id="err"></p>
+
+      <button class="btn" type="submit">Open my email and finish</button>
+    </form>
+
+    <div class="sent" id="sent">
+      <div class="tick">&check;</div>
+      <h3>Your email is open.</h3>
+      <p>Everything you typed is already in it.</p>
+      <p class="big">Attach a photo of the front of your ID, then hit send.</p>
+      <p>If no email opened, send the same details to the studio yourself and attach your ID.</p>
+      <div class="acts">
+        <a class="btn ghost" href="mailto:thacarterstudios@gmail.com?subject=Session%20details">Open email again</a>
+        <a class="btn ghost" href="tel:+18004490306">Call 1 800 449 0306</a>
       </div>
     </div>
   </section>
@@ -167,14 +322,14 @@ footer .rows span{display:inline-block;min-width:74px;color:var(--brass-dk);font
       </p>
       <ul class="bring">
         <li><b>Nothing is frozen.</b> No deposit is taken and no money is held off your balance. Your available funds do not change.</li>
-        <li><b>You enter it on the payment processor secure page,</b> not here and not over email. The studio never sees or stores your full card number.</li>
+        <li><b>It never goes through this form.</b> The studio sends you a secure link afterwards and you enter it there. The studio never sees or stores your full card number.</li>
         <li><b>It is only charged</b> for damage, missing equipment, or time past the hours you booked. If none of that happens, it is never charged.</li>
         <li><b>Session time is paid separately,</b> the normal way, at 45 dollars an hour.</li>
       </ul>
       <p class="note warn">
-        Never send a card number by email, by text, or through this form. Anyone who
-        asks you to is not the studio. The only place a card goes is the secure link
-        the studio sends you after your booking is confirmed.
+        Never put a card number in this form, in an email, or in a text. Anyone who asks
+        you to is not the studio. The only place a card goes is the secure link the studio
+        sends you after your booking is confirmed.
       </p>
     </div>
   </section>
@@ -183,7 +338,7 @@ footer .rows span{display:inline-block;min-width:74px;color:var(--brass-dk);font
 
 <footer class="wrap">
   <ul class="rows">
-    <li><span>Phone</span><a href="tel:+18004490306">1&nbsp;800&nbsp;449&nbsp;0306</a></li>
+    <li><span>Phone</span><a href="tel:+18004490306">1-800-449-0306</a></li>
     <li><span>Email</span><a href="mailto:thacarterstudios@gmail.com">thacarterstudios@gmail.com</a></li>
     <li><span>Where</span>Newark, New Jersey. Address confirmed when you book.</li>
     <li><span>Hours</span>Around the clock, by appointment.</li>
@@ -196,56 +351,121 @@ footer .rows span{display:inline-block;min-width:74px;color:var(--brass-dk);font
 
 <script>
 /* ------------------------------------------------------------------
-   TALLY FORM HOOKUP
+   This form has no back end, because GitHub Pages does not have one.
+   It writes every answer into an email and hands that to the visitor's
+   own mail app, the same way the booking form on the home page does.
 
-   One thing to change here. Replace the placeholder below with the
-   form ID from your Tally form share link.
+   The one thing it cannot do is attach the ID photo, so the page says
+   so twice: once above the button and once on the confirmation.
 
-   If your Tally link is   https://tally.so/r/wQZ1aB
-   then the ID is          wQZ1aB
-
-   Leave it as PASTE_TALLY_FORM_ID and this page shows the
-   "not connected yet" notice with the call and email buttons instead,
-   so it is never broken in front of a guest.
+   When the studio is ready to take uploads properly, replace this
+   whole section with a Tally embed. The field list is already written
+   up in TALLY-FORM-BUILD-SHEET.md.
    ------------------------------------------------------------------ */
-var TALLY_FORM_ID = "PASTE_TALLY_FORM_ID";
-
 (function(){
   "use strict";
-  if(!TALLY_FORM_ID || TALLY_FORM_ID === "PASTE_TALLY_FORM_ID") return;
+  var form   = document.getElementById("intakeForm"),
+      sent   = document.getElementById("sent"),
+      err    = document.getElementById("err"),
+      segBox = document.getElementById("services"),
+      bring  = document.getElementById("bringing"),
+      gField = document.getElementById("guestField");
 
-  var box = document.getElementById("formbox");
-  var src = "https://tally.so/embed/" + encodeURIComponent(TALLY_FORM_ID) +
-            "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
-
-  var frame = document.createElement("iframe");
-  frame.setAttribute("data-tally-src", src);
-  frame.setAttribute("loading", "lazy");
-  frame.setAttribute("title", "Guest check in form");
-  frame.width = "100%";
-  frame.height = "760";
-  box.innerHTML = "";
-  box.appendChild(frame);
-
-  var esc = document.createElement("p");
-  esc.className = "fine";
-  esc.style.textAlign = "center";
-  esc.innerHTML = "Form not loading? <a href=\"https://tally.so/r/" +
-                  encodeURIComponent(TALLY_FORM_ID) + "\">Open it in its own page</a>.";
-  box.appendChild(esc);
-
-  var load = function(){
-    if(typeof Tally !== "undefined"){ Tally.loadEmbeds(); return; }
-    var frames = document.querySelectorAll("iframe[data-tally-src]:not([src])");
-    for(var i=0;i<frames.length;i++){ frames[i].src = frames[i].dataset.tallySrc; }
-  };
-  if(typeof Tally !== "undefined"){ load(); }
-  else {
-    var s = document.createElement("script");
-    s.src = "https://tally.so/widgets/embed.js";
-    s.onload = load; s.onerror = load;
-    document.body.appendChild(s);
+  /* multi select chips */
+  var segs = Array.prototype.slice.call(segBox.querySelectorAll("button"));
+  segs.forEach(function(b){
+    b.addEventListener("click", function(){
+      b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true");
+      err.classList.remove("on");
+    });
+  });
+  function chosen(){
+    return segs.filter(function(b){ return b.getAttribute("aria-pressed") === "true"; })
+               .map(function(b){ return b.textContent.trim(); });
   }
+
+  /* guest names only matter if they are bringing people */
+  function syncGuests(){ gField.hidden = bring.value !== "Bringing people"; }
+  bring.addEventListener("change", syncGuests);
+  syncGuests();
+
+  function val(id){ return (document.getElementById(id).value || "").trim(); }
+
+  function prettyTime(t){
+    if(!t || t.indexOf(":") === -1) return t || "not given";
+    var p = t.split(":"), h = parseInt(p[0], 10), m = p[1];
+    var ap = h < 12 ? "am" : "pm";
+    var h12 = h % 12; if(h12 === 0) h12 = 12;
+    return h12 + ":" + m + ap;
+  }
+
+  function prettyDate(d){
+    if(!d) return "not given";
+    var p = d.split("-");
+    if(p.length !== 3) return d;
+    var months = ["January","February","March","April","May","June","July",
+                  "August","September","October","November","December"];
+    return months[parseInt(p[1],10)-1] + " " + parseInt(p[2],10) + ", " + p[0];
+  }
+
+  form.addEventListener("submit", function(ev){
+    ev.preventDefault();
+
+    var picked = chosen();
+    if(!picked.length){
+      err.textContent = "Pick at least one thing you are booking for.";
+      err.classList.add("on");
+      segBox.scrollIntoView({ block:"center", behavior:"smooth" });
+      return;
+    }
+    err.classList.remove("on");
+
+    var bringing = bring.value === "Bringing people";
+    var guests = val("guests");
+
+    var body = [
+      "*** ATTACH A PHOTO OF THE FRONT OF YOUR ID TO THIS EMAIL BEFORE SENDING ***",
+      "",
+      "GUEST CHECK IN",
+      "",
+      "Name on ID:     " + val("name"),
+      "Phone:          " + val("phone"),
+      "Email:          " + val("email"),
+      "",
+      "Date:           " + prettyDate(val("date")),
+      "Start time:     " + prettyTime(val("time")),
+      "Hours:          " + val("hours"),
+      "Room:           " + document.getElementById("room").value,
+      "Booking for:    " + picked.join(", "),
+      "",
+      "People in total: " + val("total"),
+      "Bringing guests: " + (bringing ? "yes" : "no, just me"),
+      "Guest names:",
+      bringing ? (guests || "(not filled in)") : "(none)",
+      "",
+      "Notes:",
+      val("notes") || "(none)",
+      "",
+      "Agreed to:",
+      "  - The name above matches the ID attached, and will be shown at the door.",
+      "  - Everyone brought is named above, and each adult will show their own ID.",
+      "  - A card will go on file. Nothing held or frozen. Charged only for damage,",
+      "    missing equipment, or time past the hours booked.",
+      "  - Session time is paid separately at 45 dollars an hour.",
+      "",
+      "Sent from the check in form at",
+      "https://1stfloorproductions.github.io/thacarterstudios/intake/"
+    ].join("\n");
+
+    var href = "mailto:thacarterstudios@gmail.com" +
+               "?subject=" + encodeURIComponent("Check in - " + val("name") + " - " + prettyDate(val("date"))) +
+               "&body=" + encodeURIComponent(body);
+
+    form.classList.add("hide");
+    sent.classList.add("on");
+    sent.scrollIntoView({ block:"center", behavior:"smooth" });
+    window.location.href = href;
+  });
 })();
 </script>
 
