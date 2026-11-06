@@ -17,8 +17,10 @@
       "url": "./?c=ig", "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }] },
     { "name": "Call", "short_name": "Call", "description": "Code that dials the studio",
       "url": "./?c=call", "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }] },
-    { "name": "Save contact", "short_name": "Card", "description": "Code that saves Sean Carter's contact",
-      "url": "./?c=card", "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }] }
+    { "name": "Save contact", "short_name": "Card", "description": "Code that saves the studio contact",
+      "url": "./?c=card", "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }] },
+    { "name": "Booking form", "short_name": "Booking", "description": "Code for the guest booking form",
+      "url": "./?c=intake", "icons": [{ "src": "./icon-192.png", "sizes": "192x192" }] }
   ],
   "icons": [
     { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },

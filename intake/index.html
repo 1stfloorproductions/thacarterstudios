@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guest check in · Tha Carter Studios</title>
+<meta name="description" content="Send Tha Carter Studios the details for your session: who is booking, who you are bringing, your ID, hours and services.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0B0A08">
+<link rel="canonical" href="https://1stfloorproductions.github.io/thacarterstudios/intake/">
+<link rel="icon" href="../assets/brand/tha-carter-monogram-gold-on-ink.svg">
+<link rel="apple-touch-icon" href="../assets/brand/tha-carter-monogram-gold-on-ink.svg">
+<style>
+@font-face{font-family:"Carter Caps";src:url("../assets/fonts/carter-caps.woff2") format("woff2");font-weight:600;font-display:swap}
+
+:root{
+  --night:#0B0A08; --ink:#14110D; --panel:#131109; --panel2:#1A1610;
+  --brass:#E3B14A; --brass-lt:#F6D98A; --brass-dk:#A97C22;
+  --ember:#D9502F; --bone:#F5F1E8; --mute:#98907F;
+  --line:rgba(227,177,74,.20);
+  --caps:"Carter Caps",ui-sans-serif,"Segoe UI",Roboto,sans-serif;
+  --body:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --pad:clamp(18px,5vw,40px);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--night);color:var(--bone);font-family:var(--body);
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+a{color:var(--brass);text-decoration:none}
+a:hover{color:var(--brass-lt);text-decoration:underline}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:3px}
+
+.wrap{max-width:780px;margin:0 auto;padding:0 var(--pad)}
+
+header{border-bottom:1px solid var(--line);background:var(--ink)}
+.bar{display:flex;align-items:center;gap:14px;padding:16px 0}
+.bar img{width:38px;height:38px;display:block}
+.bar .name{font-family:var(--caps);letter-spacing:.06em;font-size:15px;text-transform:uppercase;color:var(--bone)}
+.bar .back{margin-left:auto;font-size:14px;color:var(--mute)}
+.bar .back:hover{color:var(--brass)}
+
+.hero{padding:clamp(30px,7vw,58px) 0 10px}
+.eyebrow{font-family:var(--caps);text-transform:uppercase;letter-spacing:.18em;font-size:11px;color:var(--brass-dk);margin:0 0 12px}
+h1{font-family:var(--caps);font-size:clamp(30px,7vw,46px);line-height:1.08;margin:0 0 16px;letter-spacing:.01em}
+.lede{font-size:clamp(16px,2.4vw,18px);color:#d8d2c4;margin:0 0 6px;max-width:62ch}
+
+section{padding:26px 0}
+h2{font-family:var(--caps);text-transform:uppercase;letter-spacing:.12em;font-size:13px;color:var(--brass);margin:0 0 14px}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,3.4vw,26px)}
+
+ol.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:12px}
+ol.steps li{counter-increment:s;position:relative;padding-left:44px;color:#d8d2c4}
+ol.steps li::before{
+  content:counter(s);position:absolute;left:0;top:-1px;width:30px;height:30px;
+  display:grid;place-items:center;border-radius:50%;
+  background:var(--panel2);border:1px solid var(--line);
+  font-family:var(--caps);font-size:13px;color:var(--brass)
+}
+ol.steps b{color:var(--bone);font-weight:600}
+
+ul.bring{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+ul.bring li{padding-left:24px;position:relative;color:#d8d2c4}
+ul.bring li::before{content:"";position:absolute;left:4px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--brass-dk)}
+ul.bring b{color:var(--bone);font-weight:600}
+
+.note{border-left:2px solid var(--brass-dk);padding:2px 0 2px 16px;margin:16px 0 0;color:var(--mute);font-size:14.5px}
+.warn{border-left-color:var(--ember)}
+
+.formbox{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:10px;min-height:220px}
+.formbox iframe{display:block;width:100%;border:0;border-radius:8px}
+
+.pending{padding:26px 18px;text-align:center}
+.pending h3{font-family:var(--caps);text-transform:uppercase;letter-spacing:.1em;font-size:14px;color:var(--brass);margin:0 0 10px}
+.pending p{color:var(--mute);margin:0 auto 18px;max-width:46ch;font-size:15px}
+
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{
+  display:inline-block;padding:12px 20px;border-radius:999px;
+  background:var(--brass);color:#1b1407;font-weight:700;font-size:14.5px;
+  border:1px solid var(--brass);letter-spacing:.02em
+}
+.btn:hover{background:var(--brass-lt);color:#1b1407;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--brass);border-color:var(--line)}
+.btn.ghost:hover{background:rgba(227,177,74,.08);color:var(--brass-lt)}
+
+footer{border-top:1px solid var(--line);margin-top:30px;padding:24px 0 40px;color:var(--mute);font-size:14px}
+footer .rows{display:grid;gap:7px;margin:0 0 16px;padding:0;list-style:none}
+footer .rows span{display:inline-block;min-width:74px;color:var(--brass-dk);font-size:12.5px;text-transform:uppercase;letter-spacing:.09em;font-family:var(--caps)}
+.fine{font-size:12.5px;color:#6f6a5e;margin:14px 0 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <img src="../assets/brand/tha-carter-monogram-gold-on-ink.svg" alt="">
+    <span class="name">Tha Carter Studios</span>
+    <a class="back" href="../">Back to the studio</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <p class="eyebrow">Guest check in</p>
+    <h1>Send us your details before the session.</h1>
+    <p class="lede">
+      Every session is confirmed the same way. Fill this in once and the studio has
+      what it needs to open the door, set the room up and give you the address.
+      It takes about three minutes.
+    </p>
+  </div>
+
+  <section>
+    <h2>How it works</h2>
+    <div class="card">
+      <ol class="steps">
+        <li><b>You send this form.</b> Your details, who is coming with you, your ID photo, your hours and what you are booking.</li>
+        <li><b>The studio confirms.</b> You get a reply with the address, the door code and the total for your hours at 45 dollars an hour.</li>
+        <li><b>You put a card on file.</b> The studio sends you a secure link from its payment processor. Nothing is charged for the booking itself and no money is frozen.</li>
+        <li><b>You show the ID at the door.</b> The name on it has to match the name on this form. Everyone you bring does the same.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>Have these ready</h2>
+    <div class="card">
+      <ul class="bring">
+        <li><b>Your ID.</b> A photo of the front of your driver license or state ID. The name has to match the name you put on the form.</li>
+        <li><b>First and last name of everyone you are bringing.</b> Artists, engineers, friends, anyone walking in. Each adult brings their own ID.</li>
+        <li><b>Your date and start time,</b> and roughly how many hours you want.</li>
+        <li><b>What you are booking for.</b> Recording, podcast, video, mixing, mastering, photos, or a mix of them.</li>
+      </ul>
+      <p class="note">
+        Guests who are not on this form do not get in. That is not about you. It is
+        how the room stays insurable and how everyone keeps track of their own gear.
+      </p>
+    </div>
+  </section>
+
+  <section id="form">
+    <h2>The form</h2>
+    <div class="formbox" id="formbox">
+      <div class="pending" id="pending">
+        <h3>The form is not connected yet</h3>
+        <p>
+          It goes live here as soon as the studio finishes setting it up.
+          In the meantime, call or email and the studio will take your details directly.
+        </p>
+        <div class="acts" style="justify-content:center">
+          <a class="btn" href="tel:+18004490306">Call 1 800 449 0306</a>
+          <a class="btn ghost" href="mailto:thacarterstudios@gmail.com?subject=Session%20details">Email the studio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The card on file</h2>
+    <div class="card">
+      <p style="margin:0 0 12px;color:#d8d2c4">
+        The studio keeps a card on file for every session. Here is exactly what that means.
+      </p>
+      <ul class="bring">
+        <li><b>Nothing is frozen.</b> No deposit is taken and no money is held off your balance. Your available funds do not change.</li>
+        <li><b>You enter it on the payment processor secure page,</b> not here and not over email. The studio never sees or stores your full card number.</li>
+        <li><b>It is only charged</b> for damage, missing equipment, or time past the hours you booked. If none of that happens, it is never charged.</li>
+        <li><b>Session time is paid separately,</b> the normal way, at 45 dollars an hour.</li>
+      </ul>
+      <p class="note warn">
+        Never send a card number by email, by text, or through this form. Anyone who
+        asks you to is not the studio. The only place a card goes is the secure link
+        the studio sends you after your booking is confirmed.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <ul class="rows">
+    <li><span>Phone</span><a href="tel:+18004490306">1&nbsp;800&nbsp;449&nbsp;0306</a></li>
+    <li><span>Email</span><a href="mailto:thacarterstudios@gmail.com">thacarterstudios@gmail.com</a></li>
+    <li><span>Where</span>Newark, New Jersey. Address confirmed when you book.</li>
+    <li><span>Hours</span>Around the clock, by appointment.</li>
+  </ul>
+  <p class="fine">
+    Your ID photo and guest list are used to confirm your session and are not shared
+    with anyone outside the studio.
+  </p>
+</footer>
+
+<script>
+/* ------------------------------------------------------------------
+   TALLY FORM HOOKUP
+
+   One thing to change here. Replace the placeholder below with the
+   form ID from your Tally form share link.
+
+   If your Tally link is   https://tally.so/r/wQZ1aB
+   then the ID is          wQZ1aB
+
+   Leave it as PASTE_TALLY_FORM_ID and this page shows the
+   "not connected yet" notice with the call and email buttons instead,
+   so it is never broken in front of a guest.
+   ------------------------------------------------------------------ */
+var TALLY_FORM_ID = "PASTE_TALLY_FORM_ID";
+
+(function(){
+  "use strict";
+  if(!TALLY_FORM_ID || TALLY_FORM_ID === "PASTE_TALLY_FORM_ID") return;
+
+  var box = document.getElementById("formbox");
+  var src = "https://tally.so/embed/" + encodeURIComponent(TALLY_FORM_ID) +
+            "?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1";
+
+  var frame = document.createElement("iframe");
+  frame.setAttribute("data-tally-src", src);
+  frame.setAttribute("loading", "lazy");
+  frame.setAttribute("title", "Guest check in form");
+  frame.width = "100%";
+  frame.height = "760";
+  box.innerHTML = "";
+  box.appendChild(frame);
+
+  var esc = document.createElement("p");
+  esc.className = "fine";
+  esc.style.textAlign = "center";
+  esc.innerHTML = "Form not loading? <a href=\"https://tally.so/r/" +
+                  encodeURIComponent(TALLY_FORM_ID) + "\">Open it in its own page</a>.";
+  box.appendChild(esc);
+
+  var load = function(){
+    if(typeof Tally !== "undefined"){ Tally.loadEmbeds(); return; }
+    var frames = document.querySelectorAll("iframe[data-tally-src]:not([src])");
+    for(var i=0;i<frames.length;i++){ frames[i].src = frames[i].dataset.tallySrc; }
+  };
+  if(typeof Tally !== "undefined"){ load(); }
+  else {
+    var s = document.createElement("script");
+    s.src = "https://tally.so/widgets/embed.js";
+    s.onload = load; s.onerror = load;
+    document.body.appendChild(s);
+  }
+})();
+</script>
+
+</body>
+</html>

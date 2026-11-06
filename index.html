@@ -307,6 +307,7 @@ footer{border-top:1px solid var(--line);padding:clamp(38px,6vw,60px) 0 34px;
     <li><a href="#studio">The Studio</a></li>
     <li><a href="#rates">Rates</a></li>
     <li><a href="#book">Book</a></li>
+    <li><a href="intake/">Check in</a></li>
   </ul>
   <a class="btn" href="tel:+18004490306">Call the studio</a>
 </nav>
@@ -658,7 +659,10 @@ footer{border-top:1px solid var(--line);padding:clamp(38px,6vw,60px) 0 34px;
 <div class="wrap">
   <div class="head reveal">
     <h2>Hold<br>the room.</h2>
-    <p>Fastest way in is a phone call. The form opens your mail app with the details filled in.</p>
+    <p>Fastest way in is a phone call. The short form below opens your mail app with the
+      details filled in. If your session is already set, use the check in form instead.
+      It takes your ID, your guest list and your hours in one go.</p>
+    <p style="margin-top:14px"><a class="btn" href="intake/">Open the check in form</a></p>
   </div>
 
   <div class="book">
@@ -708,7 +712,7 @@ footer{border-top:1px solid var(--line);padding:clamp(38px,6vw,60px) 0 34px;
     </div>
 
     <div class="plate reveal">
-      <h3>Sean Carter</h3>
+      <h3>Tha Carter Studios</h3>
       <p class="role">Bookings</p>
       <ul class="rows">
         <li><span>Phone</span><a href="tel:+18004490306">1-800-449-0306</a></li>
@@ -745,6 +749,7 @@ footer{border-top:1px solid var(--line);padding:clamp(38px,6vw,60px) 0 34px;
       <li><a href="#studio">The Studio</a></li>
       <li><a href="#rates">Rates</a></li>
       <li><a href="#book">Book</a></li>
+      <li><a href="intake/">Check in</a></li>
       <li><a href="https://www.instagram.com/thacarterstudios/" rel="noopener">Instagram</a></li>
       <li><a href="qr/">Share card</a></li>
     </ul>
@@ -797,7 +802,7 @@ footer{border-top:1px solid var(--line);padding:clamp(38px,6vw,60px) 0 34px;
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "name": "Sean Carter",
+    "name": "Bookings",
     "contactType": "Bookings",
     "telephone": "+1-800-449-0306",
     "email": "thacarterstudios@gmail.com"
@@ -879,7 +884,7 @@ document.addEventListener("keydown", function(e){
 });
 
 /* ---- session total ----
-   One flat rate, confirmed by Sean 2026-11-02: $45/hour, any room. Everything
+   One flat rate, confirmed by the studio 2026-11-02: $45/hour, any room. Everything
    else is quoted per session, so nothing else gets a number on this page. */
 var RATE = 45, hours = 4;
 document.getElementById("hrs").addEventListener("input", function(e){

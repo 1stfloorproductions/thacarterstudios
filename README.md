@@ -34,8 +34,8 @@ then point the `src`/`srcset` of the figure at them. Keep both sizes — the gri
 800 and the lightbox loads the 1600.
 
 ### Changing the rate
-One flat rate, $45 an hour, any room. Confirmed by Sean 2026-11-02. It lives in `index.html` in
-two places that must stay in step: the `RATE` constant in the script, and the `$45` printed in the
+One flat rate, $45 an hour, any room. Confirmed by the studio 2026-11-02. It lives in
+`index.html` in two places that must stay in step: the `RATE` constant in the script, and the `$45` printed in the
 `.rate-big` block and the `#subline` fallback text.
 
 Everything else — engineer, mixing, mastering, video, photo days — is quoted per session and
@@ -43,8 +43,12 @@ deliberately carries no number on the page. Do not invent one. The earlier build
 rates and add-on prices; they were removed on 2026-11-02 because the site is live to real clients.
 
 ### Changing the contact details
-Sean's phone and email appear in: the nav button, the contact plate, the booking mailto,
+The studio phone and email appear in: the nav button, the contact plate, the booking mailto,
 the footer, the JSON-LD block at the bottom, and the QR codes in `qr/index.html`.
+
+The public contact is the studio name and the toll-free number only. No individual's name
+or personal number goes on this site, in the QR payloads, in the JSON-LD, or in an HTML
+comment, because comments ship to view-source.
 Search for `8004490306` and `thacarterstudios@gmail.com` to catch them all.
 
 ## The booking form
@@ -53,8 +57,14 @@ There is no back end on GitHub Pages, so nothing can be posted anywhere. The for
 a `mailto:` and opens the visitor's own mail app with every field filled in. That way a
 request can never silently vanish into a server that was never listening.
 
-To take submissions directly instead, point the form at Formspree, Netlify Forms, or
-Sean's Calendly and delete the mailto block in the submit handler.
+To take submissions directly instead, point the form at Formspree or Netlify Forms and
+delete the mailto block in the submit handler.
+
+The full guest check in form lives at `intake/`. It collects legal name, guest list, hours,
+services and an ID photo, and is backed by a Tally form. Paste the Tally form ID into the
+`TALLY_FORM_ID` line near the bottom of `intake/index.html`. Until that is set the page
+shows a "not connected yet" notice with call and email buttons, by design. No card details
+ever go through that form.
 
 ## The QR share card
 
@@ -62,8 +72,8 @@ Sean's Calendly and delete the mailto block in the submit handler.
 like a native app: full screen, works with no signal, keeps the screen awake while someone
 is scanning. Tap the code to blow it up to full screen.
 
-Five codes: website, Instagram, call, email, and a contact card that saves Sean straight
-into the scanner's phone.
+Six codes: website, Instagram, call, email, a contact card that saves the studio straight
+into the scanner's phone, and the guest check in form.
 
 Each code is stored as a bitmap, not generated at runtime: `n` is how many modules per
 side, `d` packs the grid four pixels to a hex digit, row by row. Nothing is fetched, so
@@ -73,7 +83,7 @@ but not the actual code.
 
 ## Custom domain, later
 
-When Sean pays for his own domain, add a `CNAME` file with the domain in it and point the
+When the studio pays for its own domain, add a `CNAME` file with the domain in it and point the
 DNS at GitHub. Then update the absolute URLs: `og:image`, `og:url`, `canonical`, the
-JSON-LD `url` and `image`, and re-encode the website and contact QR codes in `qr/`.
+JSON-LD `url` and `image`, and re-encode the website, contact and check in QR codes in `qr/`.
 No rebuild needed beyond that.
